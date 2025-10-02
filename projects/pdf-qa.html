@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Policy / PDF Q&A — Case Study | DataKraft</title>
+  <style>body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;margin:0;padding:32px;color:#e6e9ef;background:#0b0e14}
+  a{color:#7aa2f7;text-decoration:none} .wrap{max-width:860px;margin:0 auto}
+  h1{margin:0 0 12px} .muted{color:#a6adbb} .box{background:#111522;border:1px solid #1a2030;border-radius:16px;padding:18px;margin:16px 0}
+  .btn{display:inline-block;margin-top:10px;padding:10px 14px;border:1px solid #7aa2f7;border-radius:10px;color:#7aa2f7}</style>
+</head>
+<body><div class="wrap">
+  <a href="../index.html">← Back</a>
+  <h1>Policy / PDF Q&A</h1>
+  <p class="muted">Ask questions about a PDF and get grounded answers with cited passages.</p>
+
+  <div class="box"><strong>Problem</strong><br>Teams need answers from long PDFs (policies, decks, manuals) without reading them end-to-end.</div>
+  <div class="box"><strong>My Solution</strong><br>A small app that chunks a PDF, retrieves relevant passages, and prompts the LLM to answer with citations.</div>
+  <div class="box"><strong>How It Works</strong>
+    <ul>
+      <li>Upload PDF → text chunks + vector index</li>
+      <li>Retrieve top-k passages for each question</li>
+      <li>LLM answers concisely and lists the source sections</li>
+    </ul>
+  </div>
+
+  <div class="box"><strong>Live Demo</strong><br>
+    <a class="btn" href="https://your-hfspaces-demo-link" target="_blank">Open demo</a>
+    <p class="muted" style="margin-top:8px">If you see “Demo limit exceeded”, it means this month’s free quota is used up. Please check back next month.</p>
+  </div>
+
+  <div class="box"><strong>Tech Stack</strong><br>Python, Streamlit/Gradio, sentence-transformers, FAISS, OpenAI (or local LLM)</div>
+</div></body></html>
