@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>DataKraft — AI Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root { --bg:#0b0e14; --card:#111522; --muted:#a6adbb; --text:#e6e9ef; --accent:#7aa2f7; }
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#0b0e14,#0b0e14 60%,#0d1320);color:var(--text);}
+    .wrap{max-width:1100px;margin:0 auto;padding:48px 20px;}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+    h1{font-size:28px;margin:0}
+    .sub{color:var(--muted);margin:6px 0 0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:22px}
+    .card{background:var(--card);border:1px solid #1a2030;border-radius:16px;padding:18px;transition:transform .15s ease, border-color .15s}
+    .card:hover{transform:translateY(-2px);border-color:var(--accent)}
+    .tag{display:inline-block;font-size:12px;color:#fff;background:#2a3145;border-radius:999px;padding:4px 10px;margin-bottom:10px}
+    .title{font-weight:700;font-size:18px;margin:6px 0}
+    .desc{color:var(--muted);font-size:14px;line-height:1.5}
+    .cta{display:inline-block;margin-top:14px;padding:10px 14px;border:1px solid var(--accent);border-radius:10px;color:var(--accent);text-decoration:none}
+    .cta:hover{background:rgba(122,162,247,.08)}
+    footer{margin-top:36px;color:var(--muted);font-size:13px}
+    a{color:var(--accent);text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>DataKraft — AI Projects</h1>
+        <p class="sub">Practical LLM demos: data analysis, Q&A over docs, and automation.</p>
+      </div>
+      <div><a href="mailto:you@domain.com">Contact</a></div>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <span class="tag">Anchor</span>
+        <div class="title">Data→Insights Copilot</div>
+        <p class="desc">Upload a CSV. See trends, simple charts, and 3–5 prioritized business actions.</p>
+        <a class="cta" href="https://your-streamlit-demo-link" target="_blank">Live demo</a>
+        <a class="cta" href="projects/data-insights.html" style="margin-left:8px">Case study</a>
+      </div>
+
+      <div class="card">
+        <span class="tag">RAG-lite</span>
+        <div class="title">Policy / PDF Q&A</div>
+        <p class="desc">Ask questions about a PDF and get grounded answers with cited passages.</p>
+        <a class="cta" href="https://your-hfspaces-demo-link" target="_blank">Live demo</a>
+        <a class="cta" href="projects/pdf-qa.html" style="margin-left:8px">Case study</a>
+      </div>
+
+      <div class="card">
+        <span class="tag">Summarizer</span>
+        <div class="title">Meeting & Email Minutes</div>
+        <p class="desc">Paste text → get clean minutes, owners, deadlines, and follow-ups.</p>
+        <a class="cta" href="https://your-demo-link" target="_blank">Live demo</a>
+        <a class="cta" href="projects/minutes.html" style="margin-left:8px">Case study</a>
+      </div>
+
+      <div class="card">
+        <span class="tag">Automation</span>
+        <div class="title">Zapier AI Workflow</div>
+        <p class="desc">Form → AI → email delivery. A packaged automation with access control.</p>
+        <a class="cta" href="projects/zapier.html">Case study</a>
+      </div>
+    </div>
+
+    <footer>
+      Built with GitHub Pages. Demos hosted on Streamlit/Hugging Face Spaces. © <span id="y"></span> DataKraft.
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
