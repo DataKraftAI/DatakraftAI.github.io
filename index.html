@@ -1,154 +1,254 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>DataKraft — AI Projects</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root { --bg:#0b0e14; --card:#111522; --muted:#a6adbb; --text:#e6e9ef; --accent:#7aa2f7; }
-    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#0b0e14,#161b25);color:var(--text);}
-    .wrap{max-width:1100px;margin:0 auto;padding:56px 20px;}
-    .grid{gap:22px;}
-    .card{border-radius:18px;}
+    :root{
+      --bg:#0b0e14; --bg2:#0d1320; --card:#111522;
+      --muted:#a6adbb; --text:#e6e9ef; --accent:#7aa2f7;
+      --border:#1a2030; --chip:#2a3145;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,var(--bg),var(--bg) 55%,var(--bg2));
+    }
+    .wrap{
+      max-width:1100px;           /* keeps everything nicely centered */
+      margin:0 auto;
+      padding:56px 20px 60px;
+    }
+
+    /* HEADER */
     header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
-    h1{font-size:28px;margin:0}
-    sub{color:var(--muted);margin:6px 0 0}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:22px}
-    .card{background:var(--card);border:1px solid #1a2030;border-radius:16px;padding:18px;transition:transform .15s ease, border-color .15s}
-    .card:hover{transform:translateY(-2px);border-color:var(--accent)}
-    .tag{display:inline-block;font-size:12px;color:#fff;background:#2a3145;border-radius:999px;padding:4px 10px;margin-bottom:10px}
+    h1{font-size:32px;margin:0}
+    .lead{color:var(--muted);margin:6px 0 0 0}
+    .lead + .lead{margin-top:6px}
+    .right{display:flex;gap:14px;align-items:center}
+    .right a{color:var(--accent);text-decoration:none;white-space:nowrap} /* never wrap E-Mail */
+    select.lang{background:#0f1424;color:var(--text);border:1px solid #223;border-radius:10px;padding:8px 10px}
+
+    /* GRID */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:22px;
+      margin-top:24px;
+      justify-items:stretch;
+    }
+    /* visually “center” the card block on wide screens */
+    @media(min-width:1220px){
+      .grid{max-width:1000px;margin-left:auto;margin-right:auto}
+    }
+
+    /* CARDS */
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px;
+      transition:transform .15s ease,border-color .15s ease, box-shadow .15s ease;
+    }
+    .card:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 6px 24px rgba(0,0,0,.25)}
+    .tag{display:inline-block;font-size:12px;color:#fff;background:var(--chip);border-radius:999px;padding:4px 10px;margin-bottom:10px}
     .title{font-weight:700;font-size:18px;margin:6px 0}
-    .desc{color:var(--muted);font-size:14px;line-height:1.4;margin:8px 0 18px}
-    .btn{display:inline-block;border:1px solid var(--accent);color:var(--accent);border-radius:8px;padding:6px 14px;font-size:14px;text-decoration:none;margin-right:8px}
-    .btn:hover{background:var(--accent);color:#fff}
-    .right{display:flex;align-items:center;gap:14px}
-    .right a{color:var(--accent);text-decoration:none;white-space:nowrap;}  /* fix */
-    .lang{background:#1a2030;color:var(--text);border:1px solid #2a3145;border-radius:6px;padding:4px 8px;font-size:13px}
-    footer{margin-top:40px;font-size:13px;color:var(--muted);text-align:center}
+    .desc{color:var(--muted);font-size:14px;line-height:1.5}
+    .cta{
+      display:inline-block;margin-top:14px;padding:10px 14px;border:1px solid var(--accent);
+      border-radius:10px;color:var(--accent);text-decoration:none
+    }
+    .cta + .cta{margin-left:8px}
+    .cta:hover{background:rgba(122,162,247,.08)}
+
+    /* ABOUT */
+    footer{margin-top:36px;color:var(--muted);font-size:13px;text-align:center}
+    a{color:var(--accent);text-decoration:none}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <div>
-        <h1 id="title">DataKraft — AI Projects</h1>
-        <sub id="subtitle">Practical LLM demos for business: data analysis, Q&amp;A over docs, and automation.</sub>
+        <h1 data-i18n="h1">DataKraft — AI Projects</h1>
+        <p class="lead" data-i18n="sub1">Practical LLM demos for business: data analysis, Q&A over docs, and automation.</p>
+        <p class="lead" data-i18n="sub2">Proof-of-work portfolio · real live demos · concise case studies</p>
       </div>
       <div class="right">
-        <a id="email" href="mailto:example@datakraft.ai">Email</a>
-        •
-        <a id="linkedin" href="https://www.linkedin.com/">LinkedIn</a>
-        <select id="lang" class="lang">
+        <a id="email-link" href="mailto:stan.kaylaan@gmail.com" data-i18n="email">Email</a>
+        &nbsp;•&nbsp;
+        <a id="li-link" href="https://www.linkedin.com/in/datakraftai" target="_blank" data-i18n="linkedin">LinkedIn</a>
+        <select id="lang" class="lang" aria-label="Language">
           <option value="en">English</option>
           <option value="de">Deutsch</option>
         </select>
       </div>
     </header>
+
     <div class="grid">
+      <!-- Card 1 -->
       <div class="card">
-        <div class="tag" id="tag1">Anchor</div>
-        <div class="title" id="t1">Data→Insights Copilot</div>
-        <div class="desc" id="d1">Upload a CSV. See trends, simple charts, and 3–5 prioritized business actions.</div>
-        <a class="btn" id="b1a" href="projects/data-insights.html">Live demo</a>
-        <a class="btn" id="b1b" href="projects/data-insights.html">Case study</a>
+        <span class="tag" data-i18n="tag_anchor">Anchor</span>
+        <div class="title" data-i18n="c1_title">Data→Insights Copilot</div>
+        <p class="desc" data-i18n="c1_desc">Upload a CSV. See trends, simple charts, and 3–5 prioritized business actions.</p>
+        <a class="cta" id="c1_demo" href="https://data-insights-copilot-kmrn5fhfhplnzwxfzmm6sm.streamlit.app/" target="_blank" rel="noopener" data-i18n="live">Live demo</a>
+        <a class="cta" id="c1_case" href="projects/data-insights.html" data-i18n="case">Case study</a>
       </div>
+
+      <!-- Card 2 -->
       <div class="card">
-        <div class="tag" id="tag2">RAG-lite</div>
-        <div class="title" id="t2">Policy / PDF Q&amp;A</div>
-        <div class="desc" id="d2">Upload PDFs, ask questions, and get concise answers with page citations.</div>
-        <a class="btn" id="b2a" href="projects/pdf-qa.html">Live demo</a>
-        <a class="btn" id="b2b" href="projects/pdf-qa.html">Case study</a>
+        <span class="tag" data-i18n="tag_rag">RAG-lite</span>
+        <div class="title" data-i18n="c2_title">Policy / PDF Q&A</div>
+        <p class="desc" data-i18n="c2_desc">Upload PDFs, ask questions, and get concise answers with page citations.</p>
+        <a class="cta" id="c2_demo" href="https://pdf-app-copilot-dytjr5crbs9fylwr2uvl9o.streamlit.app/" target="_blank" rel="noopener" data-i18n="live">Live demo</a>
+        <a class="cta" id="c2_case" href="projects/pdf-qa.html" data-i18n="case">Case study</a>
       </div>
+
+      <!-- Card 3 -->
       <div class="card">
-        <div class="tag" id="tag3">Summarizer</div>
-        <div class="title" id="t3">Meeting &amp; Email Minutes</div>
-        <div class="desc" id="d3">Paste text → get clean minutes, owners, deadlines, and follow-ups.</div>
-        <a class="btn" id="b3a" href="projects/minutes.html">Live demo</a>
-        <a class="btn" id="b3b" href="projects/minutes.html">Case study</a>
+        <span class="tag" data-i18n="tag_sum">Summarizer</span>
+        <div class="title" data-i18n="c3_title">Meeting & Email Minutes</div>
+        <p class="desc" data-i18n="c3_desc">Paste text → get clean minutes, owners, deadlines, and follow-ups.</p>
+        <a class="cta" id="c3_demo" href="https://meeting-minutes-dyftwjread3kksutzujcy6.streamlit.app/" target="_blank" rel="noopener" data-i18n="live">Live demo</a>
+        <a class="cta" id="c3_case" href="projects/minutes.html" data-i18n="case">Case study</a>
       </div>
+
+      <!-- Card 4 -->
       <div class="card">
-        <div class="tag" id="tag4">Automation</div>
-        <div class="title" id="t4">Zapier AI Workflow</div>
-        <div class="desc" id="d4">Form → AI → email delivery. A packaged automation with access control.</div>
-        <a class="btn" id="b4b" href="projects/zapier.html">Case study</a>
+        <span class="tag" data-i18n="tag_auto">Automation</span>
+        <div class="title" data-i18n="c4_title">Zapier AI Workflow</div>
+        <p class="desc" data-i18n="c4_desc">Form → AI → email delivery. A packaged automation with access control.</p>
+        <a class="cta" id="c4_case" href="projects/zapier.html" data-i18n="case">Case study</a>
       </div>
-      <div class="card">
-        <div class="title" id="about-title">About &amp; Skills</div>
-        <div class="desc" id="about-text">
-          I build small, useful AI systems for business: prompt-chained data analysis, PDF/Q&amp;A (RAG-lite), and lightweight automations with Zapier/Make. I focus on clarity, speed to value, and clean UX.
+
+      <!-- About -->
+      <section style="grid-column:1/-1;background:#111522;border:1px solid #1a2030;border-radius:16px;padding:18px">
+        <h3 style="margin:0 0 8px 0;" data-i18n="about_h3">About & Skills</h3>
+        <p class="desc" style="margin:0 0 10px 0" data-i18n="about_p">
+          I build small, useful AI systems for business: prompt-chained data analysis, PDF/Q&A (RAG-lite),
+          and lightweight automations with Zapier/Make. I focus on clarity, speed to value, and clean UX.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;font-size:13px">
+          <span style="background:#2a3145;color:#fff;border-radius:999px;padding:6px 10px">Python</span>
+          <span style="background:#2a3145;color:#fff;border-radius:999px;padding:6px 10px">Streamlit</span>
+          <span style="background:#2a3145;color:#fff;border-radius:999px;padding:6px 10px">pandas</span>
+          <span style="background:#2a3145;color:#fff;border-radius:999px;padding:6px 10px">OpenAI API</span>
+          <span style="background:#2a3145;color:#fff;border-radius:999px;padding:6px 10px" data-i18n="chip_rag">RAG</span>
+          <span style="background:#2a3145;color:#fff;border-radius:999px;padding:6px 10px">FAISS / RAG-lite</span>
+          <span style="background:#2a3145;color:#fff;border-radius:999px;padding:6px 10px">Zapier / Make</span>
+          <span style="background:#2a3145;color:#fff;border-radius:999px;padding:6px 10px">GitHub Pages</span>
         </div>
-        <div>
-          <span class="btn">Python</span>
-          <span class="btn">Streamlit</span>
-          <span class="btn">pandas</span>
-          <span class="btn">OpenAI API</span>
-          <span class="btn">RAG</span>
-          <span class="btn">FAISS / RAG-lite</span>
-          <span class="btn">Zapier / Make</span>
-          <span class="btn">GitHub Pages</span>
+        <div style="margin-top:12px">
+          <a href="mailto:stan.kaylaan@gmail.com" style="color:#7aa2f7;text-decoration:none;margin-right:12px" data-i18n="email">Email</a>
+          <a href="https://www.linkedin.com/in/datakraftai" target="_blank" style="color:#7aa2f7;text-decoration:none" data-i18n="linkedin">LinkedIn</a>
         </div>
-      </div>
+      </section>
     </div>
-    <footer id="footer">Proof-of-work portfolio • real live demos • concise case studies</footer>
+
+    <footer>
+      <span data-i18n="footer_left">Built with GitHub Pages. Demos hosted on Streamlit/Hugging Face Spaces.</span>
+      &nbsp;© <span id="y"></span> DataKraftAI.
+    </footer>
   </div>
+
   <script>
+    // i18n
     const STR = {
       en: {
-        title:"DataKraft — AI Projects",
-        subtitle:"Practical LLM demos for business: data analysis, Q&A over docs, and automation.",
+        h1:"DataKraft — AI Projects",
+        sub1:"Practical LLM demos for business: data analysis, Q&A over docs, and automation.",
+        sub2:"Proof-of-work portfolio · real live demos · concise case studies",
         email:"Email",
         linkedin:"LinkedIn",
-        tag1:"Anchor",
-        t1:"Data→Insights Copilot",
-        d1:"Upload a CSV. See trends, simple charts, and 3–5 prioritized business actions.",
-        b1a:"Live demo", b1b:"Case study",
-        tag2:"RAG-lite",
-        t2:"Policy / PDF Q&A",
-        d2:"Upload PDFs, ask questions, and get concise answers with page citations.",
-        b2a:"Live demo", b2b:"Case study",
-        tag3:"Summarizer",
-        t3:"Meeting & Email Minutes",
-        d3:"Paste text → get clean minutes, owners, deadlines, and follow-ups.",
-        b3a:"Live demo", b3b:"Case study",
-        tag4:"Automation",
-        t4:"Zapier AI Workflow",
-        d4:"Form → AI → email delivery. A packaged automation with access control.",
-        b4b:"Case study",
-        "about-title":"About & Skills",
-        "about-text":"I build small, useful AI systems for business: prompt-chained data analysis, PDF/Q&A (RAG-lite), and lightweight automations with Zapier/Make. I focus on clarity, speed to value, and clean UX.",
-        footer:"Proof-of-work portfolio • real live demos • concise case studies"
+        tag_anchor:"Anchor", tag_rag:"RAG-lite", tag_sum:"Summarizer", tag_auto:"Automation",
+        c1_title:"Data→Insights Copilot",
+        c1_desc:"Upload a CSV. See trends, simple charts, and 3–5 prioritized business actions.",
+        c2_title:"Policy / PDF Q&A",
+        c2_desc:"Upload PDFs, ask questions, and get concise answers with page citations.",
+        c3_title:"Meeting & Email Minutes",
+        c3_desc:"Paste text → get clean minutes, owners, deadlines, and follow-ups.",
+        c4_title:"Zapier AI Workflow",
+        c4_desc:"Form → AI → email delivery. A packaged automation with access control.",
+        live:"Live demo", case:"Case study",
+        about_h3:"About & Skills",
+        about_p:"I build small, useful AI systems for business: prompt-chained data analysis, PDF/Q&A (RAG-lite), and lightweight automations with Zapier/Make. I focus on clarity, speed to value, and clean UX.",
+        chip_rag:"RAG",
+        footer_left:"Built with GitHub Pages. Demos hosted on Streamlit/Hugging Face Spaces."
       },
       de: {
-        title:"DataKraft — KI-Projekte",
-        subtitle:"Praktische LLM-Demos für Unternehmen: Datenanalyse, Fragen & Antworten über Dokumente und Automatisierung.",
+        h1:"DataKraft — KI-Projekte",
+        sub1:"Praktische LLM-Demos für Unternehmen: Datenanalyse, Fragen & Antworten über Dokumente und Automatisierung.",
+        sub2:"Portfolio mit echten Ergebnissen · Live-Demos · kurze Fallstudien",
         email:"E-Mail",  // non-breaking hyphen
         linkedin:"LinkedIn",
-        tag1:"Anchor",
-        t1:"Data→Insights Copilot",
-        d1:"CSV hochladen. Trends, einfache Charts und 3–5 priorisierte Business-Maßnahmen.",
-        b1a:"Live-Demo", b1b:"Fallstudie",
-        tag2:"RAG-lite",
-        t2:"Policy / PDF-Q&A",
-        d2:"PDFs hochladen, Fragen stellen und prägnante Antworten mit Seitenangaben erhalten.",
-        b2a:"Live-Demo", b2b:"Fallstudie",
-        tag3:"Zusammenfasser",
-        t3:"Besprechungs- & E-Mail-Protokolle",
-        d3:"Text einfügen → klare Protokolle mit Verantwortlichen, Terminen und Follow-ups.",
-        b3a:"Live-Demo", b3b:"Fallstudie",
-        tag4:"Automatisierung",
-        t4:"Zapier-KI-Workflow",
-        d4:"Formular → KI → E-Mail-Versand. Paketierte Automatisierung mit Zugriffsteuerung.",
-        b4b:"Fallstudie",
-        "about-title":"Über mich & Skills",
-        "about-text":"Ich baue kleine, nützliche KI-Systeme für Unternehmen: prompt-verkettete Datenanalyse, PDF/Q&A (RAG-lite) und schlanke Automatisierungen mit Zapier/Make. Fokus: Klarheit, Time-to-Value, saubere UX.",
-        footer:"Portfolio mit echten Ergebnissen • Live-Demos • kurze Fallstudien"
+        tag_anchor:"Anchor", tag_rag:"RAG-lite", tag_sum:"Zusammenfasser", tag_auto:"Automatisierung",
+        c1_title:"Data→Insights Copilot",
+        c1_desc:"CSV hochladen. Trends, einfache Charts und 3–5 priorisierte Business-Maßnahmen.",
+        c2_title:"Policy / PDF-Q&A",
+        c2_desc:"PDFs hochladen, Fragen stellen und prägnante Antworten mit Seitenangaben erhalten.",
+        c3_title:"Besprechungs- & E-Mail-Protokolle",
+        c3_desc:"Text einfügen → klare Protokolle mit Verantwortlichen, Terminen und Follow-ups.",
+        c4_title:"Zapier-KI-Workflow",
+        c4_desc:"Formular → KI → E-Mail-Versand. Paketierte Automatisierung mit Zugriffssteuerung.",
+        live:"Live-Demo", case:"Fallstudie",
+        about_h3:"Über mich & Skills",
+        about_p:"Ich baue kleine, nützliche KI-Systeme für Unternehmen: prompt-verkettete Datenanalyse, PDF/Q&A (RAG-lite) und schlanke Automatisierungen mit Zapier/Make. Fokus: Klarheit, Time-to-Value, saubere UX.",
+        chip_rag:"RAG",
+        footer_left:"Erstellt mit GitHub Pages. Demos gehostet auf Streamlit/Hugging Face Spaces."
       }
     };
-    function setLang(l){
-      const s=STR[l]; for(const k in s){const el=document.getElementById(k); if(el) el.innerText=s[k];}
+
+    // lang init from ?lang=
+    const qs = new URLSearchParams(location.search);
+    const lang = (qs.get("lang") || "en").toLowerCase().startsWith("de") ? "de" : "en";
+    document.documentElement.lang = lang;
+    document.getElementById("lang").value = lang;
+
+    function t(key){ return STR[lang][key] || STR.en[key] || ""; }
+
+    function applyI18n(){
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        el.textContent = t(key);
+      });
+
+      // append ?lang=de to internal case-study pages in DE
+      const caseIds = ["c1_case","c2_case","c3_case","c4_case"];
+      caseIds.forEach(id=>{
+        const a = document.getElementById(id);
+        if(!a) return;
+        const url = new URL(a.getAttribute("href"), location.origin);
+        if (lang === "de") url.searchParams.set("lang","de");
+        else url.searchParams.delete("lang");
+        a.setAttribute("href", url.pathname + (url.search?url.search:""));
+      });
+
+      // Minutes demo supports ?lang=
+      const minutesDemo = document.getElementById("c3_demo");
+      if(minutesDemo){
+        try{
+          const href = new URL(minutesDemo.href);
+          if (lang === "de") href.searchParams.set("lang","de");
+          else href.searchParams.delete("lang");
+          minutesDemo.href = href.toString();
+        }catch(e){}
+      }
     }
-    const sel=document.getElementById("lang");
-    sel.addEventListener("change",e=>setLang(e.target.value));
+    applyI18n();
+
+    // switcher
+    document.getElementById("lang").addEventListener("change",(e)=>{
+      const newLang = e.target.value;
+      const params = new URLSearchParams(location.search);
+      if (newLang === "de") params.set("lang","de"); else params.delete("lang");
+      location.href = location.pathname + (params.toString()?("?"+params.toString()):"");
+    });
+
+    // footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
