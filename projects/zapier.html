@@ -3,25 +3,103 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Zapier AI Workflow — Case Study | DataKraft</title>
-  <style>body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;margin:0;padding:32px;color:#e6e9ef;background:#0b0e14}
-  a{color:#7aa2f7;text-decoration:none} .wrap{max-width:860px;margin:0 auto}
-  h1{margin:0 0 12px} .muted{color:#a6adbb} .box{background:#111522;border:1px solid #1a2030;border-radius:16px;padding:18px;margin:16px 0}
-  .btn{display:inline-block;margin-top:10px;padding:10px 14px;border:1px solid #7aa2f7;border-radius:10px;color:#7aa2f7}</style>
+  <style>
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;margin:0;padding:32px;color:#e6e9ef;background:#0b0e14}
+    a{color:#7aa2f7;text-decoration:none}
+    .wrap{max-width:860px;margin:0 auto}
+    h1{margin:0 0 12px}
+    .muted{color:#a6adbb}
+    .box{background:#111522;border:1px solid #1a2030;border-radius:16px;padding:18px;margin:16px 0}
+    .btn{display:inline-block;margin-top:10px;padding:10px 14px;border:1px solid #7aa2f7;border-radius:10px;color:#7aa2f7}
+    .lang-select{float:right;margin-bottom:12px}
+  </style>
 </head>
-<body><div class="wrap">
-  <a href="../index.html">← Back</a>
-  <h1>Zapier AI Workflow</h1>
-  <p class="muted">Form → AI → email delivery. A packaged automation with access control.</p>
+<body>
+  <div class="wrap">
+    <a href="../index.html" id="back-link">← Back</a>
+    <select class="lang-select" id="lang">
+      <option value="en">English</option>
+      <option value="de">Deutsch</option>
+    </select>
+    <h1 id="title">Zapier AI Workflow</h1>
+    <p class="muted" id="subtitle">Form → AI → email delivery. A packaged automation with access control.</p>
 
-  <div class="box"><strong>Problem</strong><br>Teams want automated, consistent outputs from simple inputs (e.g., weekly posts or status reports).</div>
-  <div class="box"><strong>My Solution</strong><br>Tally form → Zapier → OpenAI → Gmail. Includes an allowlist check and friendly quota message if exceeded.</div>
-  <div class="box"><strong>How It Works</strong>
-    <ul>
-      <li>Client fills Tally form (fields → variables)</li>
-      <li>Zapier assembles a prompt & calls OpenAI</li>
-      <li>Results are emailed to the client, with simple HTML formatting</li>
-    </ul>
+    <div class="box"><strong id="problem-label">Problem</strong><br>
+      <span id="problem-text">Teams want automated, consistent outputs from simple inputs (e.g., weekly posts or status reports).</span>
+    </div>
+
+    <div class="box"><strong id="solution-label">My Solution</strong><br>
+      <span id="solution-text">Tally form → Zapier → OpenAI → Gmail. Includes an allowlist check and friendly quota message if exceeded.</span>
+    </div>
+
+    <div class="box"><strong id="how-label">How It Works</strong>
+      <ul id="how-list">
+        <li>Client fills Tally form (fields → variables)</li>
+        <li>Zapier assembles a prompt & calls OpenAI</li>
+        <li>Results are emailed to the client, with simple HTML formatting</li>
+      </ul>
+    </div>
+
+    <div class="box"><strong id="deliverables-label">Deliverables</strong><br>
+      <span id="deliverables-text">Prompt templates, Zapier blueprint, error/limit handling copy, and screenshots.</span>
+    </div>
   </div>
 
-  <div class="box"><strong>Deliverables</strong><br>Prompt templates, Zapier blueprint, error/limit handling copy, and screenshots.</div>
-</div></body></html>
+  <script>
+    const STR = {
+      en: {
+        back: "← Back",
+        title: "Zapier AI Workflow",
+        subtitle: "Form → AI → email delivery. A packaged automation with access control.",
+        problem: "Problem",
+        problemText: "Teams want automated, consistent outputs from simple inputs (e.g., weekly posts or status reports).",
+        solution: "My Solution",
+        solutionText: "Tally form → Zapier → OpenAI → Gmail. Includes an allowlist check and friendly quota message if exceeded.",
+        how: "How It Works",
+        howList: [
+          "Client fills Tally form (fields → variables)",
+          "Zapier assembles a prompt & calls OpenAI",
+          "Results are emailed to the client, with simple HTML formatting"
+        ],
+        deliverables: "Deliverables",
+        deliverablesText: "Prompt templates, Zapier blueprint, error/limit handling copy, and screenshots."
+      },
+      de: {
+        back: "← Zurück",
+        title: "Zapier KI-Workflow",
+        subtitle: "Formular → KI → E-Mail-Versand. Eine automatisierte Lösung mit Zugriffskontrolle.",
+        problem: "Problem",
+        problemText: "Teams möchten automatisierte, konsistente Ergebnisse aus einfachen Eingaben (z. B. wöchentliche Posts oder Statusberichte).",
+        solution: "Meine Lösung",
+        solutionText: "Tally-Formular → Zapier → OpenAI → Gmail. Enthält eine Allowlist-Prüfung und eine freundliche Quotenmeldung, falls überschritten.",
+        how: "Funktionsweise",
+        howList: [
+          "Kunde füllt Tally-Formular aus (Felder → Variablen)",
+          "Zapier erstellt einen Prompt und ruft OpenAI auf",
+          "Ergebnisse werden dem Kunden per E-Mail zugesandt, mit einfachem HTML-Format"
+        ],
+        deliverables: "Ergebnisse",
+        deliverablesText: "Prompt-Vorlagen, Zapier-Blueprint, Fehlermeldungs-/Limit-Texte und Screenshots."
+      }
+    };
+
+    const langSelect = document.getElementById("lang");
+    const applyLang = () => {
+      const L = STR[langSelect.value];
+      document.getElementById("back-link").textContent = L.back;
+      document.getElementById("title").textContent = L.title;
+      document.getElementById("subtitle").textContent = L.subtitle;
+      document.getElementById("problem-label").textContent = L.problem;
+      document.getElementById("problem-text").textContent = L.problemText;
+      document.getElementById("solution-label").textContent = L.solution;
+      document.getElementById("solution-text").textContent = L.solutionText;
+      document.getElementById("how-label").textContent = L.how;
+      document.getElementById("how-list").innerHTML = L.howList.map(x=>`<li>${x}</li>`).join("");
+      document.getElementById("deliverables-label").textContent = L.deliverables;
+      document.getElementById("deliverables-text").textContent = L.deliverablesText;
+    };
+    langSelect.addEventListener("change", applyLang);
+    applyLang();
+  </script>
+</body>
+</html>
