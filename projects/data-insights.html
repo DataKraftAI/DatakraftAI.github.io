@@ -3,30 +3,122 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Data→Insights Copilot — Case Study | DataKraft</title>
-  <style>body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;margin:0;padding:32px;color:#e6e9ef;background:#0b0e14}
-  a{color:#7aa2f7;text-decoration:none} .wrap{max-width:860px;margin:0 auto}
-  h1{margin:0 0 12px} .muted{color:#a6adbb} .box{background:#111522;border:1px solid #1a2030;border-radius:16px;padding:18px;margin:16px 0}
-  .btn{display:inline-block;margin-top:10px;padding:10px 14px;border:1px solid #7aa2f7;border-radius:10px;color:#7aa2f7}</style>
+  <style>
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;margin:0;padding:32px;color:#e6e9ef;background:#0b0e14}
+    a{color:#7aa2f7;text-decoration:none}
+    .wrap{max-width:860px;margin:0 auto}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+    .lang{background:#111522;color:#e6e9ef;border:1px solid #1a2030;border-radius:8px;padding:6px 10px}
+    h1{margin:8px 0 12px}
+    .muted{color:#a6adbb}
+    .box{background:#111522;border:1px solid #1a2030;border-radius:16px;padding:18px;margin:16px 0}
+    .btn{display:inline-block;margin-top:10px;padding:10px 14px;border:1px solid #7aa2f7;border-radius:10px;color:#7aa2f7}
+  </style>
 </head>
-<body><div class="wrap">
-  <a href="../index.html">← Back</a>
-  <h1>Data→Insights Copilot</h1>
-  <p class="muted">Upload a CSV → trends, simple charts, and 3–5 prioritized business actions.</p>
+<body>
+  <div class="wrap">
+    <header>
+      <a id="back-link" href="../index.html">← <span data-i18n="back">Back</span></a>
+      <select id="lang" class="lang" aria-label="Language / Sprache">
+        <option value="en">English</option>
+        <option value="de">Deutsch</option>
+      </select>
+    </header>
 
-  <div class="box"><strong>Problem</strong><br>Leaders want quick, trustworthy takeaways from messy data without hiring an analyst.</div>
-  <div class="box"><strong>My Solution</strong><br>Streamlit app that profiles the CSV, charts time & categories, and (optionally) uses GPT to propose actions tailored to Exec/Ops/Marketing.</div>
-  <div class="box"><strong>How It Works</strong>
-    <ul>
-      <li>CSV upload → pandas profile</li>
-      <li>Matplotlib charts (time series & top categories)</li>
-      <li>Optional AI call (OpenAI) with a Chain-of-Thought prompt to produce findings & actions</li>
-    </ul>
+    <h1 data-i18n="title">Data→Insights Copilot</h1>
+    <p class="muted" data-i18n="tagline">Upload a CSV → trends, simple charts, and 3–5 prioritized business actions.</p>
+
+    <div class="box"><strong data-i18n="problem_h">Problem</strong><br><span data-i18n="problem_p">Leaders want quick, trustworthy takeaways from messy data without hiring an analyst.</span></div>
+
+    <div class="box"><strong data-i18n="solution_h">My Solution</strong><br><span data-i18n="solution_p">Streamlit app that profiles the CSV, charts time &amp; categories, and (optionally) uses GPT to propose actions tailored to Exec/Ops/Marketing.</span></div>
+
+    <div class="box">
+      <strong data-i18n="how_h">How It Works</strong>
+      <ul>
+        <li data-i18n="how_1">CSV upload → pandas profile</li>
+        <li data-i18n="how_2">Matplotlib charts (time series &amp; top categories)</li>
+        <li data-i18n="how_3">Optional AI call (OpenAI) with a structured prompt to produce findings &amp; actions</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <strong data-i18n="demo_h">Live Demo</strong><br>
+      <a class="btn" id="demo-btn" href="https://data-insights-copilot-kmrn5fhfhplnzwxfzmm6sm.streamlit.app" target="_blank" data-i18n="demo_btn">Open demo</a>
+      <p class="muted" style="margin-top:8px" data-i18n="demo_note">If you see “Demo limit exceeded”, it means this month’s free quota is used up. Please check back next month.</p>
+    </div>
+
+    <div class="box"><strong data-i18n="tech_h">Tech Stack</strong><br><span data-i18n="tech_p">Python, Streamlit, pandas, matplotlib, OpenAI (optional)</span></div>
   </div>
 
-  <div class="box"><strong>Live Demo</strong><br>
-    <a class="btn" href="https://data-insights-copilot-kmrn5fhfhplnzwxfzmm6sm.streamlit.app" target="_blank">Open demo</a>
-    <p class="muted" style="margin-top:8px">If you see “Demo limit exceeded”, it means this month’s free quota is used up. Please check back next month.</p>
-  </div>
+  <script>
+    // i18n strings
+    const STR = {
+      en: {
+        back: "Back",
+        title: "Data→Insights Copilot",
+        tagline: "Upload a CSV → trends, simple charts, and 3–5 prioritized business actions.",
+        problem_h: "Problem",
+        problem_p: "Leaders want quick, trustworthy takeaways from messy data without hiring an analyst.",
+        solution_h: "My Solution",
+        solution_p: "Streamlit app that profiles the CSV, charts time & categories, and (optionally) uses GPT to propose actions tailored to Exec/Ops/Marketing.",
+        how_h: "How It Works",
+        how_1: "CSV upload → pandas profile",
+        how_2: "Matplotlib charts (time series & top categories)",
+        how_3: "Optional AI call (OpenAI) with a structured prompt to produce findings & actions",
+        demo_h: "Live Demo",
+        demo_btn: "Open demo",
+        demo_note: "If you see “Demo limit exceeded”, it means this month’s free quota is used up. Please check back next month.",
+        tech_h: "Tech Stack",
+        tech_p: "Python, Streamlit, pandas, matplotlib, OpenAI (optional)"
+      },
+      de: {
+        back: "Zurück",
+        title: "Data→Insights Copilot",
+        tagline: "CSV hochladen → Trends, einfache Charts und 3–5 priorisierte Business-Maßnahmen.",
+        problem_h: "Problem",
+        problem_p: "Führungskräfte brauchen schnelle, verlässliche Erkenntnisse aus unordentlichen Daten – ohne extra Analysten.",
+        solution_h: "Meine Lösung",
+        solution_p: "Streamlit-App, die die CSV profiliert, Zeit- und Kategorien-Charts erzeugt und (optional) GPT nutzt, um je nach Zielgruppe (Management/Operations/Marketing) Maßnahmen vorzuschlagen.",
+        how_h: "So funktioniert es",
+        how_1: "CSV-Upload → pandas-Profil",
+        how_2: "Matplotlib-Charts (Zeitreihe & Top-Kategorien)",
+        how_3: "Optionale KI-Abfrage (OpenAI) mit strukturiertem Prompt für Erkenntnisse & Maßnahmen",
+        demo_h: "Live-Demo",
+        demo_btn: "Demo öffnen",
+        demo_note: "Bei „Demo limit exceeded“ ist das Monatskontingent aufgebraucht. Bitte später erneut versuchen.",
+        tech_h: "Technologie-Stack",
+        tech_p: "Python, Streamlit, pandas, matplotlib, OpenAI (optional)"
+      }
+    };
 
-  <div class="box"><strong>Tech Stack</strong><br>Python, Streamlit, pandas, matplotlib, OpenAI (optional)</div>
-</div></body></html>
+    // language from ?lang=, default en
+    const qs = new URLSearchParams(location.search);
+    let lang = (qs.get("lang") || "en").toLowerCase().startsWith("de") ? "de" : "en";
+    document.documentElement.lang = lang;
+    document.getElementById("lang").value = lang;
+
+    // apply text
+    function applyI18n() {
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        el.textContent = (STR[lang][key] || STR.en[key] || "");
+      });
+
+      // keep Back link carrying the current lang so users return to the same language
+      const back = document.getElementById("back-link");
+      const url = new URL(back.getAttribute("href"), location.origin);
+      if (lang === "de") url.searchParams.set("lang","de"); else url.searchParams.delete("lang");
+      back.setAttribute("href", url.pathname + (url.search?url.search:""));
+    }
+    applyI18n();
+
+    // dropdown change
+    document.getElementById("lang").addEventListener("change",(e)=>{
+      lang = e.target.value;
+      const params = new URLSearchParams(location.search);
+      if (lang === "de") params.set("lang","de"); else params.delete("lang");
+      location.href = location.pathname + (params.toString()?("?"+params.toString()):"");
+    });
+  </script>
+</body>
+</html>
