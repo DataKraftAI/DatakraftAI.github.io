@@ -1,1 +1,171 @@
-test
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Product Owner’s Copilot — Case Study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <style>
+    :root{
+      --bg:#0b0e14; --bg2:#0d1320; --card:#111522;
+      --muted:#a6adbb; --text:#e6e9ef; --accent:#7aa2f7;
+      --border:#1a2030; --chip:#2a3145;
+    }
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,var(--bg),var(--bg) 55%,var(--bg2));
+    }
+    .wrap{max-width:800px;margin:0 auto;padding:40px 20px 60px;}
+    a{color:var(--accent);text-decoration:none}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
+    h1{font-size:28px;margin:0}
+    .tag{display:inline-block;font-size:13px;color:#fff;background:var(--chip);border-radius:999px;padding:4px 10px;margin-bottom:12px}
+    section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:22px}
+    h2{margin-top:0;font-size:20px}
+    p{color:var(--muted);line-height:1.55}
+    ul{color:var(--muted);line-height:1.55}
+    select.lang{background:#0f1424;color:var(--text);border:1px solid #223;border-radius:10px;padding:6px 10px}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a href="../index.html" data-i18n="back">← Back</a>
+    <select id="lang" class="lang">
+      <option value="en">English</option>
+      <option value="de">Deutsch</option>
+    </select>
+  </header>
+
+  <span class="tag" data-i18n="tag_po">For Product Owners</span>
+  <h1 data-i18n="title">Product Owner’s Copilot</h1>
+  <p data-i18n="subtitle">AI assistant for backlog refinement & acceptance criteria</p>
+
+  <section>
+    <h2 data-i18n="problem">Problem</h2>
+    <p data-i18n="problem_p">
+      Backlog items often arrive as rough notes or long paragraphs. Converting them into clear, testable
+      user stories with acceptance criteria takes time and varies by writer and team.
+    </p>
+  </section>
+
+  <section>
+    <h2 data-i18n="solution">My Solution</h2>
+    <p data-i18n="solution_p">
+      A lightweight copilot that takes raw ideas or epic notes and produces ready-to-groom stories:
+    </p>
+    <ul>
+      <li data-i18n="solution_li1">Rewrites into INVEST-style user stories</li>
+      <li data-i18n="solution_li2">Generates Gherkin-style acceptance criteria (Given/When/Then)</li>
+      <li data-i18n="solution_li3">Suggests priority (High/Medium/Low) and complexity hints</li>
+      <li data-i18n="solution_li4">Flags duplicates or unclear scope</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 data-i18n="how">How It Works</h2>
+    <ul>
+      <li data-i18n="how_li1">PO pastes notes, epic description, or raw bullet points</li>
+      <li data-i18n="how_li2">Copilot normalizes language and applies story templates</li>
+      <li data-i18n="how_li3">Produces acceptance criteria and edge cases</li>
+      <li data-i18n="how_li4">Outputs a tidy list ready for import to Jira/Linear</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 data-i18n="deliverables">Deliverables</h2>
+    <ul>
+      <li data-i18n="del_li1">INVEST-compliant stories (“As a … I want … so that …”)</li>
+      <li data-i18n="del_li2">Acceptance criteria in Gherkin format</li>
+      <li data-i18n="del_li3">Priority suggestion + assumptions and open questions</li>
+      <li data-i18n="del_li4">CSV/Markdown export for backlog tools</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 data-i18n="tech">Tech Stack</h2>
+    <p data-i18n="tech_p">
+      Python, Streamlit, OpenAI API, Pandas · Optional: export helpers for Jira/Linear
+    </p>
+  </section>
+</div>
+
+<script>
+const STR = {
+  en: {
+    back:"← Back",
+    tag_po:"For Product Owners",
+    title:"Product Owner’s Copilot",
+    subtitle:"AI assistant for backlog refinement & acceptance criteria",
+    problem:"Problem",
+    problem_p:"Backlog items often arrive as rough notes or long paragraphs. Converting them into clear, testable user stories with acceptance criteria takes time and varies by writer and team.",
+    solution:"My Solution",
+    solution_p:"A lightweight copilot that takes raw ideas or epic notes and produces ready-to-groom stories:",
+    solution_li1:"Rewrites into INVEST-style user stories",
+    solution_li2:"Generates Gherkin-style acceptance criteria (Given/When/Then)",
+    solution_li3:"Suggests priority (High/Medium/Low) and complexity hints",
+    solution_li4:"Flags duplicates or unclear scope",
+    how:"How It Works",
+    how_li1:"PO pastes notes, epic description, or raw bullet points",
+    how_li2:"Copilot normalizes language and applies story templates",
+    how_li3:"Produces acceptance criteria and edge cases",
+    how_li4:"Outputs a tidy list ready for import to Jira/Linear",
+    deliverables:"Deliverables",
+    del_li1:"INVEST-compliant stories (“As a … I want … so that …”)",
+    del_li2:"Acceptance criteria in Gherkin format",
+    del_li3:"Priority suggestion + assumptions and open questions",
+    del_li4:"CSV/Markdown export for backlog tools",
+    tech:"Tech Stack",
+    tech_p:"Python, Streamlit, OpenAI API, Pandas · Optional: export helpers for Jira/Linear"
+  },
+  de: {
+    back:"← Zurück",
+    tag_po:"Für Product Owner",
+    title:"Product Owner’s Copilot",
+    subtitle:"KI-Assistent für Backlog-Refinement & Akzeptanzkriterien",
+    problem:"Problem",
+    problem_p:"Backlog-Items kommen oft als grobe Notizen oder lange Absätze. Die Umwandlung in klare, testbare User Stories mit Akzeptanzkriterien kostet Zeit und ist je nach Autor und Team uneinheitlich.",
+    solution:"Meine Lösung",
+    solution_p:"Ein schlanker Copilot, der rohe Ideen oder Epic-Notizen in groombare Stories verwandelt:",
+    solution_li1:"Formuliert nach INVEST-Standard",
+    solution_li2:"Erstellt Akzeptanzkriterien im Gherkin-Format (Given/When/Then)",
+    solution_li3:"Schlägt Priorität (High/Medium/Low) und Komplexitätshinweise vor",
+    solution_li4:"Markiert Duplikate oder unklare Abgrenzungen",
+    how:"Funktionsweise",
+    how_li1:"PO fügt Notizen, Epic-Beschreibung oder Stichpunkte ein",
+    how_li2:"Copilot normalisiert Sprache und nutzt Story-Vorlagen",
+    how_li3:"Erzeugt Akzeptanzkriterien und Edge Cases",
+    how_li4:"Gibt eine saubere Liste zur Übernahme in Jira/Linear aus",
+    deliverables:"Ergebnisse",
+    del_li1:"INVEST-konforme Stories („Als … möchte ich … damit …“)",
+    del_li2:"Akzeptanzkriterien im Gherkin-Format",
+    del_li3:"Prioritätsempfehlung + Annahmen und offene Fragen",
+    del_li4:"CSV/Markdown-Export für Backlog-Tools",
+    tech:"Technologie-Stack",
+    tech_p:"Python, Streamlit, OpenAI API, Pandas · Optional: Export-Helfer für Jira/Linear"
+  }
+};
+
+const qs = new URLSearchParams(location.search);
+let lang = (qs.get("lang") || "en").toLowerCase().startsWith("de") ? "de" : "en";
+document.getElementById("lang").value = lang;
+
+function t(key){ return STR[lang][key] || STR.en[key]; }
+function applyI18n(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.getAttribute("data-i18n");
+    el.textContent = t(key);
+  });
+}
+applyI18n();
+
+document.getElementById("lang").addEventListener("change",(e)=>{
+  const newLang = e.target.value;
+  const params = new URLSearchParams(location.search);
+  if(newLang==="de") params.set("lang","de"); else params.delete("lang");
+  location.href = location.pathname + (params.toString()?("?"+params.toString()):"");
+});
+</script>
+</body>
+</html>
