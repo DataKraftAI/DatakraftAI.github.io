@@ -29,7 +29,7 @@
     .lead{color:var(--muted);margin:6px 0 0 0}
     .lead + .lead{margin-top:6px}
     .right{display:flex;gap:14px;align-items:center}
-    .right a{color:var(--accent);text-decoration:none;white-space:nowrap} /* never wrap E-Mail */
+    .right a{color:var(--accent);text-decoration:none;white-space:nowrap}
     select.lang{background:#0f1424;color:var(--text);border:1px solid #223;border-radius:10px;padding:8px 10px}
 
     /* GRID */
@@ -40,7 +40,6 @@
       margin-top:24px;
       justify-items:stretch;
     }
-    /* visually “center” the card block on wide screens */
     @media(min-width:1220px){
       .grid{max-width:1000px;margin-left:auto;margin-right:auto}
     }
@@ -116,12 +115,29 @@
         <a class="cta" id="c3_case" href="projects/minutes.html" data-i18n="case">Case study</a>
       </div>
 
-      <!-- Card 4 -->
+      <!-- Card 4 (NEW PM tile) -->
+      <div class="card">
+        <span class="tag" data-i18n="tag_pm">For Project Managers</span>
+        <div class="title" data-i18n="c4_title">Project Manager Risk Copilot</div>
+        <p class="desc" data-i18n="c4_desc">Paste updates or notes → AI detects risks, owners, and project health (RAG), plus next actions.</p>
+        <!-- Live demo can be added later; keep only case study to avoid 404 -->
+        <a class="cta" id="c4_case" href="#" title="Coming soon" data-i18n="case">Case study</a>
+      </div>
+
+      <!-- Card 5 (NEW PO tile) -->
+      <div class="card">
+        <span class="tag" data-i18n="tag_po">For Product Owners</span>
+        <div class="title" data-i18n="c5_title">Product Owner’s Copilot</div>
+        <p class="desc" data-i18n="c5_desc">Turn rough ideas into INVEST-ready stories with acceptance criteria and priority hints.</p>
+        <a class="cta" id="c5_case" href="#" title="Coming soon" data-i18n="case">Case study</a>
+      </div>
+
+      <!-- Card 6 (Zapier moved to 6th) -->
       <div class="card">
         <span class="tag" data-i18n="tag_auto">Automation</span>
-        <div class="title" data-i18n="c4_title">Zapier AI Workflow</div>
-        <p class="desc" data-i18n="c4_desc">Form → AI → email delivery. A packaged automation with access control.</p>
-        <a class="cta" id="c4_case" href="projects/zapier.html" data-i18n="case">Case study</a>
+        <div class="title" data-i18n="c6_title">Zapier AI Workflow</div>
+        <p class="desc" data-i18n="c6_desc">Form → AI → email delivery. A packaged automation with access control.</p>
+        <a class="cta" id="c6_case" href="projects/zapier.html" data-i18n="case">Case study</a>
       </div>
 
       <!-- About -->
@@ -155,7 +171,7 @@
   </div>
 
   <script>
-    // i18n
+    // i18n strings
     const STR = {
       en: {
         h1:"DataKraft — AI Projects",
@@ -164,14 +180,19 @@
         email:"Email",
         linkedin:"LinkedIn",
         tag_anchor:"Anchor", tag_rag:"RAG-lite", tag_sum:"Summarizer", tag_auto:"Automation",
+        tag_pm:"For Project Managers", tag_po:"For Product Owners",
         c1_title:"Data→Insights Copilot",
         c1_desc:"Upload a CSV. See trends, simple charts, and 3–5 prioritized business actions.",
         c2_title:"Policy / PDF Q&A",
         c2_desc:"Upload PDFs, ask questions, and get concise answers with page citations.",
         c3_title:"Meeting & Email Minutes",
         c3_desc:"Paste text → get clean minutes, owners, deadlines, and follow-ups.",
-        c4_title:"Zapier AI Workflow",
-        c4_desc:"Form → AI → email delivery. A packaged automation with access control.",
+        c4_title:"Project Manager Risk Copilot",
+        c4_desc:"Paste updates or notes → AI detects risks, owners, and project health (RAG), plus next actions.",
+        c5_title:"Product Owner’s Copilot",
+        c5_desc:"Turn rough ideas into INVEST-ready stories with acceptance criteria and priority hints.",
+        c6_title:"Zapier AI Workflow",
+        c6_desc:"Form → AI → email delivery. A packaged automation with access control.",
         live:"Live demo", case:"Case study",
         about_h3:"About & Skills",
         about_p:"I build small, useful AI systems for business: prompt-chained data analysis, PDF/Q&A (RAG-lite), and lightweight automations with Zapier/Make. I focus on clarity, speed to value, and clean UX.",
@@ -182,17 +203,22 @@
         h1:"DataKraft — KI-Projekte",
         sub1:"Praktische LLM-Demos für Unternehmen: Datenanalyse, Fragen & Antworten über Dokumente und Automatisierung.",
         sub2:"Portfolio mit echten Ergebnissen · Live-Demos · kurze Fallstudien",
-        email:"E-Mail",  // non-breaking hyphen
+        email:"E-Mail",
         linkedin:"LinkedIn",
         tag_anchor:"Anchor", tag_rag:"RAG-lite", tag_sum:"Zusammenfasser", tag_auto:"Automatisierung",
+        tag_pm:"Für Projektmanager", tag_po:"Für Product Owner",
         c1_title:"Data→Insights Copilot",
         c1_desc:"CSV hochladen. Trends, einfache Charts und 3–5 priorisierte Business-Maßnahmen.",
         c2_title:"Policy / PDF-Q&A",
         c2_desc:"PDFs hochladen, Fragen stellen und prägnante Antworten mit Seitenangaben erhalten.",
         c3_title:"Besprechungs- & E-Mail-Protokolle",
         c3_desc:"Text einfügen → klare Protokolle mit Verantwortlichen, Terminen und Follow-ups.",
-        c4_title:"Zapier-KI-Workflow",
-        c4_desc:"Formular → KI → E-Mail-Versand. Paketierte Automatisierung mit Zugriffssteuerung.",
+        c4_title:"Project Manager Risk Copilot",
+        c4_desc:"Updates oder Notizen einfügen → KI erkennt Risiken, Verantwortliche und Projektstatus (RAG) mit nächsten Schritten.",
+        c5_title:"Product Owner’s Copilot",
+        c5_desc:"Grobe Ideen in INVEST-taugliche Stories mit Akzeptanzkriterien und Prioritätshinweisen umwandeln.",
+        c6_title:"Zapier-KI-Workflow",
+        c6_desc:"Formular → KI → E-Mail-Versand. Paketierte Automatisierung mit Zugriffssteuerung.",
         live:"Live-Demo", case:"Fallstudie",
         about_h3:"Über mich & Skills",
         about_p:"Ich baue kleine, nützliche KI-Systeme für Unternehmen: prompt-verkettete Datenanalyse, PDF/Q&A (RAG-lite) und schlanke Automatisierungen mit Zapier/Make. Fokus: Klarheit, Time-to-Value, saubere UX.",
@@ -215,18 +241,18 @@
         el.textContent = t(key);
       });
 
-      // append ?lang=de to internal case-study pages in DE
-      const caseIds = ["c1_case","c2_case","c3_case","c4_case"];
+      // update internal case-study links with ?lang when DE
+      const caseIds = ["c1_case","c2_case","c3_case","c4_case","c5_case","c6_case"];
       caseIds.forEach(id=>{
         const a = document.getElementById(id);
-        if(!a) return;
+        if(!a || !a.getAttribute("href") || a.getAttribute("href")==="#") return;
         const url = new URL(a.getAttribute("href"), location.origin);
         if (lang === "de") url.searchParams.set("lang","de");
         else url.searchParams.delete("lang");
         a.setAttribute("href", url.pathname + (url.search?url.search:""));
       });
 
-      // Minutes demo supports ?lang=
+      // Minutes demo supports ?lang=de
       const minutesDemo = document.getElementById("c3_demo");
       if(minutesDemo){
         try{
