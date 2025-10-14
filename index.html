@@ -17,11 +17,7 @@
       color:var(--text);
       background:linear-gradient(180deg,var(--bg),var(--bg) 55%,var(--bg2));
     }
-    .wrap{
-      max-width:1100px;           /* keeps everything nicely centered */
-      margin:0 auto;
-      padding:56px 20px 60px;
-    }
+    .wrap{max-width:1100px;margin:0 auto;padding:56px 20px 60px;}
 
     /* HEADER */
     header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
@@ -36,32 +32,23 @@
     .grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:22px;
-      margin-top:24px;
-      justify-items:stretch;
+      gap:22px;margin-top:24px;justify-items:stretch;
     }
-    @media(min-width:1220px){
-      .grid{max-width:1000px;margin-left:auto;margin-right:auto}
-    }
+    @media(min-width:1220px){ .grid{max-width:1000px;margin-left:auto;margin-right:auto} }
 
     /* CARDS */
     .card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:18px;
-      transition:transform .15s ease,border-color .15s ease, box-shadow .15s ease;
+      background:var(--card);border:1px solid var(--border);border-radius:16px;
+      padding:18px;transition:transform .15s ease,border-color .15s ease, box-shadow .15s ease;
     }
     .card:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 6px 24px rgba(0,0,0,.25)}
     .tag{display:inline-block;font-size:12px;color:#fff;background:var(--chip);border-radius:999px;padding:4px 10px;margin-bottom:10px}
     .title{font-weight:700;font-size:18px;margin:6px 0}
     .desc{color:var(--muted);font-size:14px;line-height:1.5}
-    .cta{
-      display:inline-block;margin-top:14px;padding:10px 14px;border:1px solid var(--accent);
-      border-radius:10px;color:var(--accent);text-decoration:none
-    }
+    .cta{display:inline-block;margin-top:14px;padding:10px 14px;border:1px solid var(--accent);border-radius:10px;color:var(--accent);text-decoration:none}
     .cta + .cta{margin-left:8px}
     .cta:hover{background:rgba(122,162,247,.08)}
+    .cta.disabled{opacity:.6;cursor:default;pointer-events:none}
 
     /* ABOUT */
     footer{margin-top:36px;color:var(--muted);font-size:13px;text-align:center}
@@ -115,27 +102,27 @@
         <a class="cta" id="c3_case" href="projects/minutes.html" data-i18n="case">Case study</a>
       </div>
 
-      <!-- Card 4 (NEW PM tile) -->
+      <!-- Card 4 (PM) -->
       <div class="card">
         <span class="tag" data-i18n="tag_pm">For Project Managers</span>
         <div class="title" data-i18n="c4_title">Project Manager Risk Copilot</div>
         <p class="desc" data-i18n="c4_desc">Paste updates or notes → AI detects risks, owners, and project health (RAG), plus next actions.</p>
-        <!-- Live demo can be added later; keep only case study to avoid 404 CHANGE BELOW LINE--> 
-        <a class="cta" id="c3_demo" href="https://meeting-minutes-dyftwjread3kksutzujcy6.streamlit.app/" target="_blank" rel="noopener" data-i18n="live">Live demo</a>
+        <!-- Live demo placeholder; replace '#' with Streamlit URL when ready -->
+        <a class="cta disabled" id="c4_demo" href="#" title="Coming soon" data-i18n="live">Live demo</a>
         <a class="cta" id="c4_case" href="#" title="Coming soon" data-i18n="case">Case study</a>
       </div>
 
-      <!-- Card 5 (NEW PO tile) -->
+      <!-- Card 5 (PO) -->
       <div class="card">
         <span class="tag" data-i18n="tag_po">For Product Owners</span>
         <div class="title" data-i18n="c5_title">Product Owner’s Copilot</div>
         <p class="desc" data-i18n="c5_desc">Turn rough ideas into INVEST-ready stories with acceptance criteria and priority hints.</p>
-        <!-- Live demo can be added later; keep only case study to avoid 404 CHANGE BELOW LINE--> 
-        <a class="cta" id="c3_demo" href="https://meeting-minutes-dyftwjread3kksutzujcy6.streamlit.app/" target="_blank" rel="noopener" data-i18n="live">Live demo</a>
+        <!-- Live demo placeholder; replace '#' with Streamlit URL when ready -->
+        <a class="cta disabled" id="c5_demo" href="#" title="Coming soon" data-i18n="live">Live demo</a>
         <a class="cta" id="c5_case" href="#" title="Coming soon" data-i18n="case">Case study</a>
       </div>
 
-      <!-- Card 6 (Zapier moved to 6th) -->
+      <!-- Card 6 (Zapier) -->
       <div class="card">
         <span class="tag" data-i18n="tag_auto">Automation</span>
         <div class="title" data-i18n="c6_title">Zapier AI Workflow</div>
@@ -174,14 +161,12 @@
   </div>
 
   <script>
-    // i18n strings
     const STR = {
       en: {
         h1:"DataKraft — AI Projects",
         sub1:"Practical LLM demos for business: data analysis, Q&A over docs, and automation.",
         sub2:"Proof-of-work portfolio · real live demos · concise case studies",
-        email:"Email",
-        linkedin:"LinkedIn",
+        email:"Email", linkedin:"LinkedIn",
         tag_anchor:"Anchor", tag_rag:"RAG-lite", tag_sum:"Summarizer", tag_auto:"Automation",
         tag_pm:"For Project Managers", tag_po:"For Product Owners",
         c1_title:"Data→Insights Copilot",
@@ -206,8 +191,7 @@
         h1:"DataKraft — KI-Projekte",
         sub1:"Praktische LLM-Demos für Unternehmen: Datenanalyse, Fragen & Antworten über Dokumente und Automatisierung.",
         sub2:"Portfolio mit echten Ergebnissen · Live-Demos · kurze Fallstudien",
-        email:"E-Mail",
-        linkedin:"LinkedIn",
+        email:"E-Mail", linkedin:"LinkedIn",
         tag_anchor:"Anchor", tag_rag:"RAG-lite", tag_sum:"Zusammenfasser", tag_auto:"Automatisierung",
         tag_pm:"Für Projektmanager", tag_po:"Für Product Owner",
         c1_title:"Data→Insights Copilot",
@@ -230,7 +214,6 @@
       }
     };
 
-    // lang init from ?lang=
     const qs = new URLSearchParams(location.search);
     const lang = (qs.get("lang") || "en").toLowerCase().startsWith("de") ? "de" : "en";
     document.documentElement.lang = lang;
@@ -250,8 +233,7 @@
         const a = document.getElementById(id);
         if(!a || !a.getAttribute("href") || a.getAttribute("href")==="#") return;
         const url = new URL(a.getAttribute("href"), location.origin);
-        if (lang === "de") url.searchParams.set("lang","de");
-        else url.searchParams.delete("lang");
+        if (lang === "de") url.searchParams.set("lang","de"); else url.searchParams.delete("lang");
         a.setAttribute("href", url.pathname + (url.search?url.search:""));
       });
 
@@ -260,15 +242,13 @@
       if(minutesDemo){
         try{
           const href = new URL(minutesDemo.href);
-          if (lang === "de") href.searchParams.set("lang","de");
-          else href.searchParams.delete("lang");
+          if (lang === "de") href.searchParams.set("lang","de"); else href.searchParams.delete("lang");
           minutesDemo.href = href.toString();
         }catch(e){}
       }
     }
     applyI18n();
 
-    // switcher
     document.getElementById("lang").addEventListener("change",(e)=>{
       const newLang = e.target.value;
       const params = new URLSearchParams(location.search);
@@ -276,7 +256,6 @@
       location.href = location.pathname + (params.toString()?("?"+params.toString()):"");
     });
 
-    // footer year
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
