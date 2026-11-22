@@ -320,3 +320,13 @@ html[data-lang="en"] .langswitch [data-set="en"],html[data-lang="de"] .langswitc
 .chip.urgent{background:#f9d9cc;color:#8a2e0b}.chip.high{background:var(--accent-soft);color:var(--accent-dark)}.chip.normal{background:#e8edf2;color:#3c4a5a}
 .tri td.act{color:var(--muted);font-size:13.5px}
 @media(max-width:900px){.triage-in{grid-template-columns:1fr}}
+
+/* ---------- KPI review demo (strategy page) ---------- */
+.chip.green{background:#e3f1e8;color:#2f7d4f}.chip.amber{background:#fbeed3;color:#8a5a00}.chip.red{background:#f9d9cc;color:#8a2e0b}
+.trend{font-size:13px;color:var(--muted);white-space:nowrap}
+.trend.up{color:#2f7d4f}.trend.down{color:#a13f12}
+.pipe td.dir{width:120px}
+.update-wrap{margin:0 24px 24px;border:1px solid var(--line)}
+.update-wrap .bar2{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--paper);border-bottom:1px solid var(--line);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.update-wrap .bar2 button{font:600 13px var(--sans);padding:7px 12px;border:2px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer;text-transform:none;letter-spacing:0}
+.update{margin:0;padding:18px 20px;white-space:pre-wrap;font:15px/1.65 var(--sans);color:var(--ink)}
