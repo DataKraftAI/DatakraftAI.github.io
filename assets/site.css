@@ -346,3 +346,29 @@ html[data-lang="en"] .langswitch [data-set="en"],html[data-lang="de"] .langswitc
 .legend{display:flex;gap:18px;flex-wrap:wrap;padding:10px 24px 0;font-size:13px;color:var(--muted)}
 .legend i{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px}
 @media(max-width:1080px){.fc-in{grid-template-columns:1fr 1fr}.fc-in .wide{grid-column:span 2}}
+
+/* ---------- data check demo (data page) ---------- */
+.dq-in{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:20px;padding:20px 24px;border-bottom:1px solid var(--line)}
+.dq-in textarea{width:100%;min-height:200px;font:13px/1.55 ui-monospace,Menlo,Consolas,monospace;border:1px solid var(--line);padding:12px 14px;color:var(--ink);resize:vertical;white-space:pre;overflow-x:auto}
+.dq-in textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.dq-in .side{display:flex;flex-direction:column;gap:10px;font-size:13px;color:var(--muted)}
+.dq-in .side label{display:flex;flex-direction:column;gap:5px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.dq-in .side select{font:500 14px var(--sans);border:1px solid var(--line);padding:8px;color:var(--ink);text-transform:none;letter-spacing:0}
+.dq-in .side button{font:600 14px var(--sans);padding:10px 14px;border:2px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer}
+.dq-charts{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid var(--line)}
+.dq-charts>div{padding:18px 24px}
+.dq-charts>div+div{border-left:1px solid var(--line)}
+.dq-charts h4{margin:0 0 12px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.hbar{display:grid;grid-template-columns:120px 1fr 90px;gap:10px;align-items:center;font-size:13.5px;margin-bottom:8px}
+.hbar .b{height:14px;background:var(--accent)}
+.hbar .v{text-align:right;color:var(--ink);font-weight:600}
+.vbars{display:flex;align-items:flex-end;gap:8px;height:150px}
+.vbars .c{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.vbars .b{width:100%;background:var(--ink)}
+.vbars .l{font-size:11.5px;color:var(--muted);padding-top:6px;white-space:nowrap}
+.issues{margin:0;padding:16px 24px 6px 44px;font-size:14.5px;color:var(--text)}
+.issues li{margin-bottom:6px}
+@media(max-width:900px){.dq-in,.dq-charts{grid-template-columns:1fr}.dq-charts>div+div{border-left:0;border-top:1px solid var(--line)}}
+.dq-charts>div{min-width:0}
+.vbars .c{min-width:0}
+@media(max-width:640px){.vbars{gap:4px}.vbars .l{font-size:9.5px;letter-spacing:-.02em}.hbar{grid-template-columns:90px 1fr 70px}}

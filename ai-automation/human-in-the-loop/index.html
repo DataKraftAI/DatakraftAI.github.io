@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Human in the loop: using AI on real work without losing control — DataKraft</title>
+  <meta name="description" content="Where people should review AI output, how to make reviewing fast, which cases always go to a person, and what to log, so AI can be used on real work safely.">
+  <meta name="robots" content="noindex">
+  <script>try{var l=(new URLSearchParams(location.search).get("lang")||localStorage.getItem("dk_lang")||"en");if(l.toLowerCase().indexOf("de")===0)document.documentElement.setAttribute("data-lang","de")}catch(e){}</script>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<div class="utility"><div class="wrap"><span>Berlin, <span lang="en">Germany</span><span lang="de">Deutschland</span></span><span class="langswitch" role="group" aria-label="Language"><button data-set="en">EN</button><button data-set="de">DE</button></span></div></div>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="/new/" data-keep-lang>DataKraft<span class="slash" aria-hidden="true"></span></a>
+  <nav class="nav"><a href="/ai-automation/" data-keep-lang class="hide-sm"><span lang="en">AI &amp; Automation</span><span lang="de">KI &amp; Automatisierung</span></a><a class="btn primary" href="mailto:stan.kaylan@gmail.com"><span lang="en">Get in touch</span><span lang="de">Kontakt</span></a></nav>
+</div></header>
+
+<main class="wrap">
+<article class="article">
+  <p class="crumbs"><a href="/ai-automation/" data-keep-lang><span lang="en">AI &amp; Automation</span><span lang="de">KI &amp; Automatisierung</span></a> › <span lang="en">Articles</span><span lang="de">Artikel</span></p>
+  <p class="note-en" lang="de">Dieser Artikel ist auf Englisch.</p>
+  <p class="eyebrow">Responsible AI</p>
+  <h1>Human in the loop: using AI on real work without losing control</h1>
+  <p class="standfirst">"A person checks the output" is easy to promise and easy to get wrong. If checking is slow, people stop checking. Here is how to design review so it actually happens.</p>
+  <div class="byline">DataKraft · 5 min read</div>
+  <img src="/assets/img/article-hitl.webp" alt="One colleague reviewing work on a laptop while another looks on" width="1000" height="667" style="width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;margin:0 0 36px">
+
+  <p>Language models make mistakes, sometimes confidently. That is not a reason to avoid them; it is a reason to design the work around them. In practice, the question is not whether a person reviews, but <strong>where</strong>, <strong>how fast</strong> and <strong>what happens to the cases nobody should automate</strong>.</p>
+
+  <h2>1. Decide what always goes to a person</h2>
+  <p>Before launch, write a short list of cases the tool never handles alone. These are usually defined by value, risk or novelty:</p>
+  <ul>
+    <li>Anything above a money threshold, for example orders over €10,000.</li>
+    <li>Anything legal, medical or affecting someone's job or credit.</li>
+    <li>Anything the tool has not seen before: unknown products, new customers, unusual formats.</li>
+    <li>Anything where the model itself signals low confidence or missing information.</li>
+  </ul>
+
+  <h2>2. Make reviewing faster than doing</h2>
+  <p>If checking a draft takes as long as writing it, people will either skip the check or skip the tool. Good review screens show the original and the AI's result side by side, highlight what needs attention, and let the person approve with one click or correct a single field.</p>
+  <blockquote>The best review step is the one that takes five seconds when everything is right, and makes problems impossible to miss when something is wrong.</blockquote>
+
+  <h2>3. Log everything you would want to explain later</h2>
+  <div class="box">
+    <ul>
+      <li>The input the model saw and the output it produced.</li>
+      <li>Who reviewed it, what they changed and when.</li>
+      <li>Which version of the prompt or rules was used.</li>
+    </ul>
+    <p>When something goes wrong, and eventually something will, this log turns a vague worry into a fixable problem. In Europe it also helps with documentation duties under data protection and AI rules.</p>
+  </div>
+
+  <h2>4. Watch the correction rate</h2>
+  <p>Track one number every week: <strong>how often reviewers change the AI's output</strong>. If it falls, you can consider reviewing only a sample. If it rises, something changed: new kinds of input, a model update or a process change. Either way, you find out from your data, not from a customer complaint.</p>
+
+  <h2>5. Keep a clear off switch</h2>
+  <p>Everyone on the team should know how to switch the tool off and fall back to the manual process, and that doing so is fine. Tools that people are allowed to stop are tools people are willing to trust.</p>
+  <p>Choosing which task to start with comes first; see <a href="/ai-automation/where-to-start/" data-keep-lang style="text-decoration:underline">where to start with AI in operations</a>.</p>
+</article>
+</main>
+
+<footer class="site-footer"><div class="wrap"><div class="legal"><span>© <span id="y"></span> DataKraft</span><span><a href="/ai-automation/" data-keep-lang>← <span lang="en">Back to AI &amp; Automation</span><span lang="de">Zurück zu KI &amp; Automatisierung</span></a></span></div></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>
