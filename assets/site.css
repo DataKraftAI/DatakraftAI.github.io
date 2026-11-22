@@ -372,3 +372,12 @@ html[data-lang="en"] .langswitch [data-set="en"],html[data-lang="de"] .langswitc
 .dq-charts>div{min-width:0}
 .vbars .c{min-width:0}
 @media(max-width:640px){.vbars{gap:4px}.vbars .l{font-size:9.5px;letter-spacing:-.02em}.hbar{grid-template-columns:90px 1fr 70px}}
+
+/* ---------- area cards as soft panels (owner 2026-11-22: cards should be visible as cards) ---------- */
+.areas{gap:28px}
+.area{background:var(--paper);border:1px solid #e8e2d7;transition:box-shadow .25s,border-color .25s,transform .25s}
+.area:hover{box-shadow:0 10px 30px rgba(15,27,43,.10);border-color:#dcd3c4;transform:translateY(-3px)}
+.area .ph{margin-bottom:0}
+.area > :not(.ph){padding-left:22px;padding-right:22px}
+.area .k{padding-top:20px}
+.area .more{padding-bottom:22px}
