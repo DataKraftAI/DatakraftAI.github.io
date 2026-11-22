@@ -3,189 +3,243 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DataKraft — tools, automation and analysis for real business work</title>
-  <meta name="description" content="Working demos and practical articles: AI tools, automation and data analysis for product, operations, customer, sales, people and delivery teams.">
+  <title>DataKraft — clear processes, useful data and practical AI for business teams</title>
+  <meta name="description" content="Working demos and practical articles: process improvement, data analysis and AI tools for product, operations, customer, sales, people and delivery teams.">
   <meta name="robots" content="noindex">
   <script>try{var l=(new URLSearchParams(location.search).get("lang")||localStorage.getItem("dk_lang")||"en");if(l.toLowerCase().indexOf("de")===0)document.documentElement.setAttribute("data-lang","de")}catch(e){}</script>
+  <link rel="preload" href="/assets/fonts/source-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
+<div class="utility">
+  <div class="wrap">
+    <span>Berlin, <span lang="en">Germany</span><span lang="de">Deutschland</span></span>
+    <span class="langswitch" role="group" aria-label="Language"><button data-set="en">EN</button><button data-set="de">DE</button></span>
+  </div>
+</div>
+
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/new/" data-keep-lang><span class="mark">DK</span>DataKraft</a>
+    <a class="brand" href="/new/" data-keep-lang>DataKraft<span class="slash" aria-hidden="true"></span></a>
     <nav class="nav">
       <a href="#areas" class="hide-sm"><span lang="en">Areas</span><span lang="de">Bereiche</span></a>
       <a href="#how" class="hide-sm"><span lang="en">How I work</span><span lang="de">Arbeitsweise</span></a>
-      <span class="langswitch" role="group" aria-label="Language"><button data-set="en">EN</button><button data-set="de">DE</button></span>
-      <a class="btn primary small" href="#contact"><span lang="en">Contact</span><span lang="de">Kontakt</span></a>
+      <a href="#example" class="hide-sm"><span lang="en">Examples</span><span lang="de">Beispiele</span></a>
+      <a class="btn primary" href="#contact"><span lang="en">Get in touch</span><span lang="de">Kontakt</span></a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
-  <div class="wrap">
-    <div>
-      <p class="kicker"><span lang="en">Process · Data · AI</span><span lang="de">Prozesse · Daten · KI</span></p>
-      <h1 lang="en">I turn messy business work into simple tools that save teams time.</h1>
-      <h1 lang="de">Ich mache aus unübersichtlicher Alltagsarbeit einfache Tools, die Teams Zeit sparen.</h1>
-      <p class="lead" lang="en">Clear processes, useful data and practical AI for product, operations, customer, sales, people and delivery teams. Every page here shows the work itself: demos you can try and articles on real problems.</p>
-      <p class="lead" lang="de">Klare Prozesse, nützliche Daten und praxisnahe KI für Produkt-, Operations-, Kunden-, Vertriebs-, People- und Delivery-Teams. Jede Seite zeigt die Arbeit selbst: Demos zum Ausprobieren und Artikel zu echten Problemen.</p>
+  <div class="hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow"><span lang="en">Process · Data · AI</span><span lang="de">Prozesse · Daten · KI</span></p>
+      <h1 lang="en">Less busywork. Better decisions. Tools your team actually uses.</h1>
+      <h1 lang="de">Weniger Routinearbeit. Bessere Entscheidungen. Tools, die Ihr Team wirklich nutzt.</h1>
+      <p class="lead" lang="en">I help product, operations, customer, sales, people and delivery teams fix the work that slows them down, with clear processes, useful data and practical AI.</p>
+      <p class="lead" lang="de">Ich helfe Produkt-, Operations-, Kunden-, Vertriebs-, People- und Delivery-Teams, die Arbeit zu verbessern, die sie ausbremst: mit klaren Prozessen, nützlichen Daten und praxisnaher KI.</p>
       <div class="actions">
-        <a class="btn primary" href="#areas"><span lang="en">Find your area</span><span lang="de">Ihren Bereich finden</span></a>
-        <a class="btn secondary" href="#how"><span lang="en">How I work</span><span lang="de">Wie ich arbeite</span></a>
+        <a class="btn primary" href="#areas"><span lang="en">Find your area</span><span lang="de">Ihren Bereich finden</span> <span class="arr">→</span></a>
+        <a class="btn outline" href="#how"><span lang="en">How I work</span><span lang="de">Wie ich arbeite</span></a>
       </div>
     </div>
+    <div class="hero-photo">
+      <img src="/assets/img/hero.webp" alt="Three colleagues working together at a laptop" width="2000" height="1335" fetchpriority="high">
+      <span class="band" aria-hidden="true"></span>
+      <div class="photo-note">
+        <small><span lang="en">The idea behind DataKraft</span><span lang="de">Die Idee hinter DataKraft</span></small>
+        <p lang="en">Start with the people doing the work. Then build the smallest thing that makes their day easier.</p>
+        <p lang="de">Bei den Menschen anfangen, die die Arbeit machen. Dann das Kleinste bauen, das ihren Alltag leichter macht.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="panel" aria-label="Example">
-      <div class="panel-top">
-        <b><span lang="en">Example: support ticket triage</span><span lang="de">Beispiel: Ticket-Triage im Support</span></b>
-        <span class="badge"><span lang="en">Example</span><span lang="de">Beispiel</span></span>
-      </div>
-      <div class="flow">
-        <div class="row">
-          <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></span>
-          <div><strong><span lang="en">214 new tickets</span><span lang="de">214 neue Tickets</span></strong>
-            <small><span lang="en">Unsorted, three channels, two languages</span><span lang="de">Unsortiert, drei Kanäle, zwei Sprachen</span></small></div>
-        </div>
-        <div class="arrow">↓ <span lang="en">sorted, summarised and routed by a small AI tool</span><span lang="de">von einem kleinen KI-Tool sortiert, zusammengefasst und verteilt</span></div>
-        <div class="row out">
-          <span class="ico"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
-          <div><strong><span lang="en">Right team, right priority</span><span lang="de">Richtiges Team, richtige Priorität</span></strong>
-            <small><span lang="en">Billing 62 · Technical 88 · Account 64 · 9 urgent flagged</span><span lang="de">Abrechnung 62 · Technik 88 · Konto 64 · 9 dringend markiert</span></small></div>
-        </div>
-      </div>
-      <div class="bars" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
-    </div>
+<section class="statement">
+  <div class="wrap">
+    <h2 lang="en">Every page on this site shows the work itself: demos you can try and articles on real problems.</h2>
+    <h2 lang="de">Jede Seite hier zeigt die Arbeit selbst: Demos zum Ausprobieren und Artikel zu echten Problemen.</h2>
+    <p lang="en">Pick the kind of team you are hiring for. Each area has its own page, written for the people who lead that work.</p>
+    <p lang="de">Wählen Sie die Art von Team, für das Sie einstellen. Jeder Bereich hat eine eigene Seite, geschrieben für die Menschen, die diese Arbeit verantworten.</p>
   </div>
 </section>
 
 <section class="section" id="areas">
   <div class="wrap">
-    <div class="section-head">
-      <p class="over"><span lang="en">Areas</span><span lang="de">Bereiche</span></p>
+    <div class="head">
       <h2><span lang="en">What are you hiring for?</span><span lang="de">Wofür stellen Sie ein?</span></h2>
-      <p><span lang="en">Each area has its own page with demos and articles made for that kind of team.</span><span lang="de">Jeder Bereich hat eine eigene Seite mit Demos und Artikeln speziell für diese Art von Team.</span></p>
+      <p><span lang="en">Eight areas, each with demos and articles made for that kind of team.</span><span lang="de">Acht Bereiche, jeweils mit Demos und Artikeln für diese Art von Team.</span></p>
     </div>
 
-    <div class="cards">
-      <a class="card" href="/product/" data-keep-lang>
-        <span class="icon"><svg class="i" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span>
+    <div class="areas">
+      <a class="area" href="/product/" data-keep-lang>
+        <div class="ph"><img src="/assets/img/product.webp" alt="Person sketching a product flow on a whiteboard" loading="lazy" width="1000" height="667"></div>
+        <div class="k"><span lang="en">Product</span><span lang="de">Produkt</span></div>
         <h3><span lang="en">Product Management &amp; Ownership</span><span lang="de">Produktmanagement &amp; Product Ownership</span></h3>
         <p><span lang="en">From rough idea to shipped feature: user stories, backlogs, prioritisation and product analytics.</span><span lang="de">Von der Idee zum fertigen Feature: User Stories, Backlog, Priorisierung und Produktanalyse.</span></p>
-        <span class="go"><span lang="en">Explore</span><span lang="de">Ansehen</span> →</span>
+        <span class="more"><span lang="en">Explore</span><span lang="de">Ansehen</span> <span class="arr">→</span></span>
       </a>
-      <a class="card" href="/revenue-gtm/" data-keep-lang>
-        <span class="icon"><svg class="i" viewBox="0 0 24 24"><path d="M22 7 13.5 15.5l-5-5L2 17"/><path d="M16 7h6v6"/></svg></span>
+      <a class="area" href="/revenue-gtm/" data-keep-lang>
+        <div class="ph"><img src="/assets/img/revenue-gtm.webp" alt="Businesswoman on a phone call holding a tablet" loading="lazy" width="1000" height="667"></div>
+        <div class="k"><span lang="en">Sales &amp; Revenue</span><span lang="de">Vertrieb &amp; Umsatz</span></div>
         <h3><span lang="en">Sales, Partnerships &amp; Revenue Ops</span><span lang="de">Vertrieb, Partnerschaften &amp; Revenue Ops</span></h3>
         <p><span lang="en">Cleaner pipelines, honest forecasts and less manual CRM work for sales teams.</span><span lang="de">Saubere Pipelines, ehrliche Forecasts und weniger manuelle CRM-Arbeit für Vertriebsteams.</span></p>
-        <span class="go"><span lang="en">Explore</span><span lang="de">Ansehen</span> →</span>
+        <span class="more"><span lang="en">Explore</span><span lang="de">Ansehen</span> <span class="arr">→</span></span>
       </a>
-      <a class="card" href="/customer-success/" data-keep-lang>
-        <span class="icon"><svg class="i" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg></span>
+      <a class="area" href="/customer-success/" data-keep-lang>
+        <div class="ph"><img src="/assets/img/customer-success.webp" alt="Two colleagues in conversation at a meeting table" loading="lazy" width="1000" height="667"></div>
+        <div class="k"><span lang="en">Customers</span><span lang="de">Kunden</span></div>
         <h3><span lang="en">Customer Success, Support &amp; Implementation</span><span lang="de">Customer Success, Support &amp; Implementierung</span></h3>
         <p><span lang="en">Faster answers, fewer repeat tickets and smoother onboarding for customers.</span><span lang="de">Schnellere Antworten, weniger wiederkehrende Tickets und reibungsloses Onboarding.</span></p>
-        <span class="go"><span lang="en">Explore</span><span lang="de">Ansehen</span> →</span>
+        <span class="more"><span lang="en">Explore</span><span lang="de">Ansehen</span> <span class="arr">→</span></span>
       </a>
-      <a class="card" href="/strategy-ops/" data-keep-lang>
-        <span class="icon"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36z"/></svg></span>
+      <a class="area" href="/strategy-ops/" data-keep-lang>
+        <div class="ph"><img src="/assets/img/strategy-ops.webp" alt="Leadership team meeting around a table" loading="lazy" width="1000" height="667"></div>
+        <div class="k"><span lang="en">Strategy &amp; Operations</span><span lang="de">Strategie &amp; Operations</span></div>
         <h3><span lang="en">Strategy, Operations &amp; Chief of Staff</span><span lang="de">Strategie, Operations &amp; Chief of Staff</span></h3>
         <p><span lang="en">Turning noise into decisions: KPIs that matter, better processes and crisp updates for leaders.</span><span lang="de">Aus Lärm werden Entscheidungen: relevante KPIs, bessere Prozesse und klare Updates für die Führung.</span></p>
-        <span class="go"><span lang="en">Explore</span><span lang="de">Ansehen</span> →</span>
+        <span class="more"><span lang="en">Explore</span><span lang="de">Ansehen</span> <span class="arr">→</span></span>
       </a>
-      <a class="card" href="/people-talent/" data-keep-lang>
-        <span class="icon"><svg class="i" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+      <a class="area" href="/people-talent/" data-keep-lang>
+        <div class="ph"><img src="/assets/img/people-talent.webp" alt="Interview conversation in a meeting room" loading="lazy" width="1000" height="667"></div>
+        <div class="k">People</div>
         <h3><span lang="en">People, Talent &amp; HR</span><span lang="de">People, Talent &amp; HR</span></h3>
         <p><span lang="en">Hiring and people operations that run on clear structure instead of spreadsheet chaos.</span><span lang="de">Recruiting und People Operations mit klarer Struktur statt Tabellen-Chaos.</span></p>
-        <span class="go"><span lang="en">Explore</span><span lang="de">Ansehen</span> →</span>
+        <span class="more"><span lang="en">Explore</span><span lang="de">Ansehen</span> <span class="arr">→</span></span>
       </a>
-      <a class="card" href="/project-program/" data-keep-lang>
-        <span class="icon"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></span>
+      <a class="area" href="/project-program/" data-keep-lang>
+        <div class="ph"><img src="/assets/img/project-program.webp" alt="Two colleagues planning together at a whiteboard" loading="lazy" width="1000" height="667"></div>
+        <div class="k">Delivery</div>
         <h3><span lang="en">Project, Program &amp; Agile Delivery</span><span lang="de">Projekt-, Programm- &amp; agile Delivery</span></h3>
         <p><span lang="en">Risks spotted early, clear owners and honest status reports, in Scrum or classic projects.</span><span lang="de">Risiken früh erkennen, klare Verantwortung und ehrliche Statusberichte, agil oder klassisch.</span></p>
-        <span class="go"><span lang="en">Explore</span><span lang="de">Ansehen</span> →</span>
+        <span class="more"><span lang="en">Explore</span><span lang="de">Ansehen</span> <span class="arr">→</span></span>
       </a>
-      <a class="card" href="/ai-automation/" data-keep-lang>
-        <span class="icon"><svg class="i" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 3v4M17 5h4M5 17v4M3 19h4"/></svg></span>
+      <a class="area" href="/ai-automation/" data-keep-lang>
+        <div class="ph"><img src="/assets/img/ai-automation.webp" alt="Laptop showing code next to a phone and coffee" loading="lazy" width="1000" height="667"></div>
+        <div class="k"><span lang="en">AI &amp; Automation</span><span lang="de">KI &amp; Automatisierung</span></div>
         <h3><span lang="en">AI, Automation &amp; Building</span><span lang="de">KI, Automatisierung &amp; Tools bauen</span></h3>
         <p><span lang="en">Small AI tools and workflows that take repetitive work off a team, built and shipped end to end.</span><span lang="de">Kleine KI-Tools und Workflows, die Teams Routinearbeit abnehmen, von der Idee bis zum Einsatz.</span></p>
-        <span class="go"><span lang="en">Explore</span><span lang="de">Ansehen</span> →</span>
+        <span class="more"><span lang="en">Explore</span><span lang="de">Ansehen</span> <span class="arr">→</span></span>
       </a>
-      <a class="card" href="/data-analysis/" data-keep-lang>
-        <span class="icon"><svg class="i" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M8 17v-6M13 17V7M18 17v-4"/></svg></span>
+      <a class="area" href="/data-analysis/" data-keep-lang>
+        <div class="ph"><img src="/assets/img/data-analysis.webp" alt="Person working on a tablet at a meeting table" loading="lazy" width="1000" height="667"></div>
+        <div class="k"><span lang="en">Data</span><span lang="de">Daten</span></div>
         <h3><span lang="en">Data &amp; Business Analysis</span><span lang="de">Daten- &amp; Business-Analyse</span></h3>
         <p><span lang="en">From raw data and vague requirements to a clear recommendation people can act on.</span><span lang="de">Von Rohdaten und unklaren Anforderungen zu einer klaren, umsetzbaren Empfehlung.</span></p>
-        <span class="go"><span lang="en">Explore</span><span lang="de">Ansehen</span> →</span>
+        <span class="more"><span lang="en">Explore</span><span lang="de">Ansehen</span> <span class="arr">→</span></span>
       </a>
     </div>
   </div>
 </section>
 
-<section class="section soft" id="how">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="over"><span lang="en">Approach</span><span lang="de">Vorgehen</span></p>
+<section class="section paper" id="how">
+  <div class="wrap split">
+    <div class="ph">
+      <img src="/assets/img/how.webp" alt="Woman explaining an idea to a colleague in front of a whiteboard" loading="lazy" width="1400" height="934">
+      <span class="band" aria-hidden="true"></span>
+    </div>
+    <div>
+      <p class="eyebrow"><span lang="en">Approach</span><span lang="de">Vorgehen</span></p>
       <h2><span lang="en">How I work</span><span lang="de">Wie ich arbeite</span></h2>
-      <p><span lang="en">The same three steps, whether the fix is a process, a dashboard or an AI tool.</span><span lang="de">Immer dieselben drei Schritte, ob die Lösung ein Prozess, ein Dashboard oder ein KI-Tool ist.</span></p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <div class="top"><span class="icon"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span><span class="n">01</span></div>
-        <h3><span lang="en">Understand the real work</span><span lang="de">Die echte Arbeit verstehen</span></h3>
-        <p><span lang="en">I start with the people doing the job and map where time, money or customers get lost.</span><span lang="de">Ich beginne bei den Menschen, die die Arbeit machen, und finde heraus, wo Zeit, Geld oder Kunden verloren gehen.</span></p>
-      </div>
-      <div class="step">
-        <div class="top"><span class="icon"><svg class="i" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><span class="n">02</span></div>
-        <h3><span lang="en">Build the smallest useful fix</span><span lang="de">Die kleinste sinnvolle Lösung bauen</span></h3>
-        <p><span lang="en">A better process, a dashboard or a small AI tool, shipped quickly and tested with real users.</span><span lang="de">Ein besserer Prozess, ein Dashboard oder ein kleines KI-Tool, schnell umgesetzt und mit echten Nutzern getestet.</span></p>
-      </div>
-      <div class="step">
-        <div class="top"><span class="icon"><svg class="i" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></span><span class="n">03</span></div>
-        <h3><span lang="en">Measure and hand over</span><span lang="de">Messen und übergeben</span></h3>
-        <p><span lang="en">I track the time saved and document it, so the team can run it without me.</span><span lang="de">Ich messe die gesparte Zeit und dokumentiere alles, damit das Team es ohne mich weiterführen kann.</span></p>
-      </div>
+      <p class="intro"><span lang="en">The same three steps, whether the fix turns out to be a process, a dashboard or an AI tool.</span><span lang="de">Immer dieselben drei Schritte, ob die Lösung am Ende ein Prozess, ein Dashboard oder ein KI-Tool ist.</span></p>
+      <ol class="steps">
+        <li><span class="n">01</span><div>
+          <h3><span lang="en">Understand the real work</span><span lang="de">Die echte Arbeit verstehen</span></h3>
+          <p><span lang="en">I sit with the people doing the job and map where time, money or customers get lost.</span><span lang="de">Ich setze mich zu den Menschen, die die Arbeit machen, und finde heraus, wo Zeit, Geld oder Kunden verloren gehen.</span></p></div></li>
+        <li><span class="n">02</span><div>
+          <h3><span lang="en">Build the smallest useful fix</span><span lang="de">Die kleinste sinnvolle Lösung bauen</span></h3>
+          <p><span lang="en">A better process, a dashboard or a small AI tool, shipped quickly and tested with real users.</span><span lang="de">Ein besserer Prozess, ein Dashboard oder ein kleines KI-Tool, schnell umgesetzt und mit echten Nutzern getestet.</span></p></div></li>
+        <li><span class="n">03</span><div>
+          <h3><span lang="en">Measure and hand over</span><span lang="de">Messen und übergeben</span></h3>
+          <p><span lang="en">I track the time saved and document everything, so the team can run it without me.</span><span lang="de">Ich messe die gesparte Zeit und dokumentiere alles, damit das Team es ohne mich weiterführen kann.</span></p></div></li>
+      </ol>
+      <a class="link" href="#contact"><span lang="en">Talk about your team</span><span lang="de">Über Ihr Team sprechen</span> →</a>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="example">
   <div class="wrap">
-    <div class="values">
-      <div class="value"><span class="icon"><svg class="i" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8M12 18v4"/></svg></span>
-        <div><h4><span lang="en">Live demos</span><span lang="de">Live-Demos</span></h4><p><span lang="en">Working tools you can try in your browser, no sign-up.</span><span lang="de">Funktionierende Tools direkt im Browser testen, ohne Anmeldung.</span></p></div></div>
-      <div class="value"><span class="icon"><svg class="i" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M8 7h8M8 11h6"/></svg></span>
-        <div><h4><span lang="en">Practical articles</span><span lang="de">Praxisnahe Artikel</span></h4><p><span lang="en">Real problems from each field and how I would solve them.</span><span lang="de">Echte Probleme aus jedem Bereich und wie ich sie lösen würde.</span></p></div></div>
-      <div class="value"><span class="icon"><svg class="i" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></span>
-        <div><h4><span lang="en">Updated regularly</span><span lang="de">Regelmäßig aktualisiert</span></h4><p><span lang="en">New demos and articles are added over time.</span><span lang="de">Neue Demos und Artikel kommen laufend dazu.</span></p></div></div>
+    <div class="feature">
+      <div class="txt">
+        <p class="eyebrow"><span lang="en">Example</span><span lang="de">Beispiel</span></p>
+        <h2 lang="en">From 214 unsorted support tickets to the right team, in minutes</h2>
+        <h2 lang="de">Von 214 unsortierten Support-Tickets zum richtigen Team, in Minuten</h2>
+        <p lang="en">Map how tickets really flow, let a small AI tool sort, summarise and route them, and keep a person in charge of the unclear cases.</p>
+        <p lang="de">Erst verstehen, wie Tickets wirklich laufen. Dann sortiert, fasst zusammen und verteilt ein kleines KI-Tool, und ein Mensch entscheidet die unklaren Fälle.</p>
+        <div class="facts">
+          <div><b>214</b><span lang="en">tickets in, three channels</span><span lang="de">Tickets aus drei Kanälen</span></div>
+          <div><b>4</b><span lang="en">teams, routed automatically</span><span lang="de">Teams, automatisch verteilt</span></div>
+          <div><b>9</b><span lang="en">urgent cases flagged for a person</span><span lang="de">dringende Fälle für einen Menschen markiert</span></div>
+        </div>
+        <a class="link light" href="/customer-success/" data-keep-lang><span lang="en">See the Customer Success page</span><span lang="de">Zur Customer-Success-Seite</span> →</a>
+      </div>
+      <div class="ph"><img src="/assets/img/example.webp" alt="Man mapping a process on a whiteboard" loading="lazy" width="1400" height="935"></div>
     </div>
   </div>
 </section>
 
-<section id="contact">
+<section class="section" style="padding-top:20px">
   <div class="wrap">
-    <div class="cta-band">
-      <div>
-        <h2><span lang="en">Have a role or a project in mind?</span><span lang="de">Haben Sie eine Stelle oder ein Projekt im Kopf?</span></h2>
-        <p><span lang="en">Tell me what slows your team down. I will tell you how I would approach it.</span><span lang="de">Erzählen Sie mir, was Ihr Team ausbremst. Ich sage Ihnen, wie ich es angehen würde.</span></p>
-      </div>
-      <div class="actions">
-        <a class="btn light" href="mailto:stan.kaylan@gmail.com"><span lang="en">Email me</span><span lang="de">E-Mail schreiben</span></a>
-        <a class="btn outline-light" href="https://www.linkedin.com/in/datakraftai" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
+    <div class="promises">
+      <div class="promise"><h3><span lang="en">Live demos</span><span lang="de">Live-Demos</span></h3><p><span lang="en">Working tools you can try in your browser, no sign-up needed.</span><span lang="de">Funktionierende Tools direkt im Browser testen, ohne Anmeldung.</span></p></div>
+      <div class="promise"><h3><span lang="en">Practical articles</span><span lang="de">Praxisnahe Artikel</span></h3><p><span lang="en">Real problems from each field and how I would solve them, step by step.</span><span lang="de">Echte Probleme aus jedem Bereich und wie ich sie lösen würde, Schritt für Schritt.</span></p></div>
+      <div class="promise"><h3><span lang="en">Updated regularly</span><span lang="de">Regelmäßig aktualisiert</span></h3><p><span lang="en">New demos and articles are added over time, so there is always something recent.</span><span lang="de">Neue Demos und Artikel kommen laufend dazu, es gibt immer etwas Aktuelles.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <img src="/assets/img/cta.webp" alt="" loading="lazy" width="2000" height="1335">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#f0a37c"><span lang="en">Contact</span><span lang="de">Kontakt</span></p>
+    <h2 lang="en">Have a role or a project in mind?</h2>
+    <h2 lang="de">Haben Sie eine Stelle oder ein Projekt im Kopf?</h2>
+    <p lang="en">Tell me what slows your team down. I will tell you how I would approach it.</p>
+    <p lang="de">Erzählen Sie mir, was Ihr Team ausbremst. Ich sage Ihnen, wie ich es angehen würde.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:stan.kaylan@gmail.com"><span lang="en">Email me</span><span lang="de">E-Mail schreiben</span> <span class="arr">→</span></a>
+      <a class="btn outline-light" href="https://www.linkedin.com/in/datakraftai" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
 </section>
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>© <span id="y"></span> DataKraft</span>
-    <nav>
-      <a href="#areas"><span lang="en">Areas</span><span lang="de">Bereiche</span></a>
-      <a href="#how"><span lang="en">How I work</span><span lang="de">Arbeitsweise</span></a>
-      <a href="mailto:stan.kaylan@gmail.com"><span lang="en">Contact</span><span lang="de">Kontakt</span></a>
-    </nav>
+    <div class="cols">
+      <div>
+        <div class="brand">DataKraft<span class="slash" aria-hidden="true"></span></div>
+        <p lang="en">Clear processes, useful data and practical AI for business teams. Based in Berlin, working in English and German.</p>
+        <p lang="de">Klare Prozesse, nützliche Daten und praxisnahe KI für Business-Teams. Sitz in Berlin, Arbeit auf Deutsch und Englisch.</p>
+      </div>
+      <div>
+        <h4><span lang="en">Areas</span><span lang="de">Bereiche</span></h4>
+        <ul>
+          <li><a href="/product/" data-keep-lang><span lang="en">Product</span><span lang="de">Produkt</span></a></li>
+          <li><a href="/revenue-gtm/" data-keep-lang><span lang="en">Sales &amp; Revenue Ops</span><span lang="de">Vertrieb &amp; Revenue Ops</span></a></li>
+          <li><a href="/customer-success/" data-keep-lang>Customer Success</a></li>
+          <li><a href="/strategy-ops/" data-keep-lang><span lang="en">Strategy &amp; Operations</span><span lang="de">Strategie &amp; Operations</span></a></li>
+          <li><a href="/people-talent/" data-keep-lang>People &amp; HR</a></li>
+          <li><a href="/project-program/" data-keep-lang><span lang="en">Project &amp; Delivery</span><span lang="de">Projekte &amp; Delivery</span></a></li>
+          <li><a href="/ai-automation/" data-keep-lang><span lang="en">AI &amp; Automation</span><span lang="de">KI &amp; Automatisierung</span></a></li>
+          <li><a href="/data-analysis/" data-keep-lang><span lang="en">Data &amp; Analysis</span><span lang="de">Daten &amp; Analyse</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span lang="en">Contact</span><span lang="de">Kontakt</span></h4>
+        <ul>
+          <li><a href="mailto:stan.kaylan@gmail.com">stan.kaylan@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/datakraftai" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="y"></span> DataKraft</span>
+      <span><span lang="en">Photos:</span><span lang="de">Fotos:</span> <a href="/credits.html">WOCinTech Chat, CC BY 2.0</a></span>
+    </div>
   </div>
 </footer>
 
