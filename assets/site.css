@@ -303,3 +303,20 @@ html[data-lang="en"] .langswitch [data-set="en"],html[data-lang="de"] .langswitc
 .target{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
 .target input{font:inherit;width:120px;border:1px solid var(--line);padding:7px 9px}
 @media(max-width:1080px){.kpis{grid-template-columns:1fr 1fr}.kpis div:nth-child(3){border-left:0}}
+
+/* ---------- ticket triage demo (customer success page) ---------- */
+.triage-in{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:20px;padding:20px 24px;border-bottom:1px solid var(--line)}
+.triage-in textarea{width:100%;min-height:210px;font:14.5px/1.6 var(--sans);border:1px solid var(--line);padding:12px 14px;color:var(--ink);resize:vertical}
+.triage-in textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.triage-in .side{display:flex;flex-direction:column;gap:10px;font-size:14px;color:var(--muted)}
+.triage-in .side button{font:600 14px var(--sans);padding:11px 16px;border:2px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer;text-align:left}
+.triage-in .side button.go{background:var(--accent);border-color:var(--accent);color:#fff}
+.triage-in .side button:hover{filter:brightness(.95)}
+.tri{width:100%;border-collapse:collapse;font-size:14.5px;min-width:900px}
+.tri th{text-align:left;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:12px 8px;border-bottom:2px solid var(--ink)}
+.tri td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.tri td.t{color:var(--ink);max-width:420px}
+.chip{display:inline-block;font-size:12px;font-weight:600;padding:3px 8px;background:var(--paper);color:var(--ink);white-space:nowrap}
+.chip.urgent{background:#f9d9cc;color:#8a2e0b}.chip.high{background:var(--accent-soft);color:var(--accent-dark)}.chip.normal{background:#e8edf2;color:#3c4a5a}
+.tri td.act{color:var(--muted);font-size:13.5px}
+@media(max-width:900px){.triage-in{grid-template-columns:1fr}}
