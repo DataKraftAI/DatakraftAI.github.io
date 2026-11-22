@@ -282,3 +282,24 @@ html[data-lang="en"] .langswitch [data-set="en"],html[data-lang="de"] .langswitc
   .walk .intro .ph{margin:-40px -28px 24px}
 }
 @media(max-width:640px){ .bring-split .bring{grid-template-columns:1fr} }
+
+/* ---------- pipeline demo (revenue page) ---------- */
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-bottom:1px solid var(--line)}
+.kpis div{padding:18px 24px;border-left:1px solid var(--line)}
+.kpis div:first-child{border-left:0}
+.kpis small{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:4px}
+.kpis b{font-family:var(--serif);font-size:28px;font-weight:500;color:var(--ink);line-height:1.15}
+.kpis span{display:block;font-size:13px;color:var(--muted)}
+.kpis .good b{color:#2f7d4f}.kpis .warn b{color:var(--accent-dark)}
+.pipe{width:100%;border-collapse:collapse;font-size:14.5px;min-width:980px}
+.pipe th{text-align:left;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:14px 6px;border-bottom:2px solid var(--ink)}
+.pipe td{padding:7px 6px;border-bottom:1px solid var(--line);vertical-align:middle}
+.pipe input,.pipe select{font:inherit;font-size:14px;border:1px solid var(--line);padding:7px 8px;width:100%;background:#fff;color:var(--ink)}
+.pipe input:focus,.pipe select:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.pipe .w{font-weight:700;color:var(--ink);white-space:nowrap}
+.flags{display:flex;flex-wrap:wrap;gap:4px}
+.flag{font-size:11.5px;font-weight:600;padding:3px 7px;background:var(--accent-soft);color:var(--accent-dark);white-space:nowrap}
+.flag.ok{background:#e3f1e8;color:#2f7d4f}
+.target{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.target input{font:inherit;width:120px;border:1px solid var(--line);padding:7px 9px}
+@media(max-width:1080px){.kpis{grid-template-columns:1fr 1fr}.kpis div:nth-child(3){border-left:0}}
