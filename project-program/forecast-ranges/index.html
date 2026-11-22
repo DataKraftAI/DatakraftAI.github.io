@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stop promising dates: forecast delivery with ranges from your own history — DataKraft</title>
+  <meta name="description" content="Single delivery dates fail because they ignore variation. A simple simulation using the team's own sprint history gives honest ranges with confidence levels, and better conversations with sponsors.">
+  <meta name="robots" content="noindex">
+  <script>try{var l=(new URLSearchParams(location.search).get("lang")||localStorage.getItem("dk_lang")||"en");if(l.toLowerCase().indexOf("de")===0)document.documentElement.setAttribute("data-lang","de")}catch(e){}</script>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<div class="utility"><div class="wrap"><span>Berlin, <span lang="en">Germany</span><span lang="de">Deutschland</span></span><span class="langswitch" role="group" aria-label="Language"><button data-set="en">EN</button><button data-set="de">DE</button></span></div></div>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="/new/" data-keep-lang>DataKraft<span class="slash" aria-hidden="true"></span></a>
+  <nav class="nav"><a href="/project-program/" data-keep-lang class="hide-sm"><span lang="en">Project &amp; Delivery</span><span lang="de">Projekte &amp; Delivery</span></a><a class="btn primary" href="mailto:stan.kaylan@gmail.com"><span lang="en">Get in touch</span><span lang="de">Kontakt</span></a></nav>
+</div></header>
+
+<main class="wrap">
+<article class="article">
+  <p class="crumbs"><a href="/project-program/" data-keep-lang><span lang="en">Project &amp; Delivery</span><span lang="de">Projekte &amp; Delivery</span></a> › <span lang="en">Articles</span><span lang="de">Artikel</span></p>
+  <p class="note-en" lang="de">Dieser Artikel ist auf Englisch.</p>
+  <p class="eyebrow">Planning</p>
+  <h1>Stop promising dates: forecast delivery with ranges from your own history</h1>
+  <p class="standfirst">"When will it be done?" is the most common question in any project. A single date is the most common wrong answer. There is a better one, and it is not complicated.</p>
+  <div class="byline">DataKraft · 6 min read</div>
+  <img src="/assets/img/article-ranges.webp" alt="Two colleagues working together on a laptop" width="1000" height="667" style="width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;margin:0 0 36px">
+
+  <p>Most delivery dates are calculated like this: work left divided by average speed. If 120 items remain and the team finishes about 15 per sprint, it will take eight sprints. The maths is correct. The answer is still misleading, for two reasons.</p>
+
+  <h2>Why single dates fail</h2>
+  <ul>
+    <li><strong>Teams do not move at their average speed.</strong> Some sprints finish 22 items, some 9: holidays, illness, surprises, a production incident. An average hides all of that.</li>
+    <li><strong>Work grows while you do it.</strong> New requirements, bugs and "small" requests arrive every sprint. A plan that assumes fixed scope will be late almost by definition.</li>
+  </ul>
+  <p>A date calculated from the average is, at best, a coin flip: right about half the time. Sponsors rarely realise they are being offered a coin flip.</p>
+
+  <h2>Use the team's own history instead</h2>
+  <p>The good news: you already have the data you need. Look at how many items the team actually finished in each of the last eight to twelve sprints. That list contains the team's real variation: the good weeks, the bad weeks, the interruptions.</p>
+  <p>Then run a simple simulation, often called a Monte Carlo forecast:</p>
+  <ol>
+    <li>For each future sprint, pick one past sprint at random and assume the team finishes the same amount again.</li>
+    <li>Add the new work that typically arrives each sprint.</li>
+    <li>Count how many sprints it takes until nothing is left.</li>
+    <li>Repeat this a few thousand times. A computer does it in a fraction of a second.</li>
+  </ol>
+  <p>You end up with a distribution: in some simulated futures the work is done in eleven sprints, in others it takes sixteen. From that, you can read off dates with a confidence level.</p>
+  <table>
+    <thead><tr><th>Confidence</th><th>Finished within (example)</th><th>Use it for</th></tr></thead>
+    <tbody>
+      <tr><td>50%</td><td>13 sprints</td><td>Internal planning and stretch goals</td></tr>
+      <tr><td>85%</td><td>15 sprints</td><td>Commitments to sponsors and customers</td></tr>
+      <tr><td>95%</td><td>16 sprints</td><td>Contracts, launches, anything with penalties</td></tr>
+    </tbody>
+  </table>
+
+  <h2>How to talk about it with sponsors</h2>
+  <p>Ranges can sound like hedging. They are not, if you present them well. I use one sentence: <em>"Based on how this team has actually delivered, we are 85% confident we will be done by 14 March. We will update this every two weeks."</em></p>
+  <blockquote>A range with a confidence level is not less committed than a date. It is more honest about the same commitment.</blockquote>
+  <p>Two things make sponsors trust it: the numbers come from the team's own history, not from opinions, and the range is recalculated every sprint. When the range shifts, everyone sees it early, and there is still time to cut scope or add help.</p>
+
+  <h2>Three practical tips</h2>
+  <ul>
+    <li><strong>Count items, not hours.</strong> If work is broken into reasonably small pieces, simply counting finished items works as well as story points, and is much easier.</li>
+    <li><strong>Watch the scope growth number.</strong> If new work arrives faster than the team finishes it, no date is honest. That is a scope conversation, not a planning one.</li>
+    <li><strong>Re-run it every sprint.</strong> A forecast is a living number, like a weather forecast.</li>
+  </ul>
+  <p>You can try this with your own numbers in the <a href="/project-program/#demo" data-keep-lang style="text-decoration:underline">delivery forecast demo</a>.</p>
+</article>
+</main>
+
+<footer class="site-footer"><div class="wrap"><div class="legal"><span>© <span id="y"></span> DataKraft</span><span><a href="/project-program/" data-keep-lang>← <span lang="en">Back to Project &amp; Delivery</span><span lang="de">Zurück zu Projekte &amp; Delivery</span></a></span></div></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>
