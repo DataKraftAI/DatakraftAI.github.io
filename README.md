@@ -1,24 +1,14 @@
-# datakraft.github.io
+# DataKraft — datakraftai.github.io
 
-# Data→Insights Copilot
+Portfolio site: clear processes, useful data and practical AI for business teams.
 
-Upload a CSV → see trends, simple charts, and AI-generated business actions.
+- `index.html`: landing page with the 8 areas
+- `<area>/index.html`: one page per area (product, revenue-gtm, customer-success, strategy-ops, people-talent,
+  project-program, ai-automation, data-analysis). Each has a browser-only demo (plain JavaScript, no data leaves
+  the browser) and articles in `<area>/<article>/index.html`
+- `assets/`: shared styles (`site.css`), language switch (`site.js`), self-hosted fonts, photos
+- `robots.txt`, `sitemap.xml`, `llms.txt`: for search engines and AI assistants
+- `credits.html`: photo credits (WOCinTech Chat, CC BY 2.0)
+- `projects/`: earlier case studies, kept for existing links
 
-## Why
-Leaders want quick, trustworthy takeaways from messy data without hiring an analyst.
-
-## What it does
-- CSV upload (≤ 5MB)
-- KPIs: rows, columns, missing values, date range
-- Charts: time series + top categories
-- Optional AI: 3–5 findings + prioritized actions (Exec/Ops/Marketing tone)
-
-## How it works
-- Streamlit UI
-- pandas + matplotlib for analysis/plots
-- OpenAI (optional) for insight generation
-
-## Run locally
-```bash
-pip install -r requirements.txt
-streamlit run app.py
+All pages are in English and German (`?lang=de`).
