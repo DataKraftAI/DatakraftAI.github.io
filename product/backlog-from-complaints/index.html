@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From 40 customer complaints to a ranked backlog in one afternoon — DataKraft</title>
+  <meta name="description" content="A repeatable method to turn raw customer complaints into a short, ranked product backlog: collect, cluster, count, frame and score.">
+  <meta name="robots" content="noindex">
+  <script>try{var l=(new URLSearchParams(location.search).get("lang")||localStorage.getItem("dk_lang")||"en");if(l.toLowerCase().indexOf("de")===0)document.documentElement.setAttribute("data-lang","de")}catch(e){}</script>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<div class="utility"><div class="wrap"><span>Berlin, <span lang="en">Germany</span><span lang="de">Deutschland</span></span><span class="langswitch" role="group" aria-label="Language"><button data-set="en">EN</button><button data-set="de">DE</button></span></div></div>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="/new/" data-keep-lang>DataKraft<span class="slash" aria-hidden="true"></span></a>
+  <nav class="nav"><a href="/product/" data-keep-lang class="hide-sm"><span lang="en">Product</span><span lang="de">Produkt</span></a><a class="btn primary" href="mailto:stan.kaylan@gmail.com"><span lang="en">Get in touch</span><span lang="de">Kontakt</span></a></nav>
+</div></header>
+
+<main class="wrap">
+<article class="article">
+  <p class="crumbs"><a href="/product/" data-keep-lang><span lang="en">Product</span><span lang="de">Produkt</span></a> › <span lang="en">Articles</span><span lang="de">Artikel</span></p>
+  <p class="note-en" lang="de">Dieser Artikel ist auf Englisch.</p>
+  <p class="eyebrow">Discovery</p>
+  <h1>From 40 customer complaints to a ranked backlog in one afternoon</h1>
+  <p class="standfirst">Most teams are not short of feedback. They are short of a way to turn it into a decision. Here is the method I use, step by step.</p>
+  <div class="byline">DataKraft · 6 min read</div>
+
+  <p>Every product team has the same pile: support tickets, sales notes, app store reviews, comments from the last customer call. It all feels urgent, and it all comes from someone who matters. The usual result is a backlog sorted by whoever asked last or loudest.</p>
+  <p>The method below takes about three hours for 40 pieces of feedback. It produces a short ranked list that you can show to stakeholders and defend line by line.</p>
+
+  <h2>1. Collect into one place, word for word</h2>
+  <p>Copy every complaint into one sheet, one row each, in the customer's own words. Add three columns: <strong>source</strong> (ticket, call, review), <strong>customer type</strong> (new, long-time, paying plan) and <strong>date</strong>.</p>
+  <p>Do not summarise yet. "Can't find the export button" and "export is broken" may sound like the same thing, but they lead to very different fixes.</p>
+
+  <h2>2. Cluster by the problem, not by the feature</h2>
+  <p>Read through the rows and give each one a short problem label, written from the customer's side: <em>"can't get my data out"</em>, not <em>"CSV export"</em>. Aim for six to ten labels. If a row fits two labels, choose the one closer to the root cause.</p>
+  <blockquote>Feature labels lock you into the first solution someone suggested. Problem labels keep the door open for a better one.</blockquote>
+
+  <h2>3. Count, then weigh</h2>
+  <p>Count the rows per label. Then add one more column, because ten complaints from trial users are not the same as three from your largest customers. I use a simple weight: 1 for free users, 2 for paying users, 3 for at-risk or high-value accounts.</p>
+  <table>
+    <thead><tr><th>Problem (customer's view)</th><th>Mentions</th><th>Weighted</th><th>Main source</th></tr></thead>
+    <tbody>
+      <tr><td>Bank connection fails and I don't know why</td><td>14</td><td>31</td><td>Tickets</td></tr>
+      <tr><td>I lose my progress if I stop halfway</td><td>9</td><td>17</td><td>Calls</td></tr>
+      <tr><td>I can't get my data out</td><td>6</td><td>15</td><td>Sales notes</td></tr>
+      <tr><td>The app feels slow on older phones</td><td>7</td><td>9</td><td>Reviews</td></tr>
+      <tr><td>I want a dark mode</td><td>4</td><td>4</td><td>Reviews</td></tr>
+    </tbody>
+  </table>
+  <p>The table is an example, but the pattern is typical: the loudest topic in reviews is rarely the one with the most weight behind it.</p>
+
+  <h2>4. Frame the top three as problem statements</h2>
+  <p>For each of the top three labels, write one sentence: <strong>who</strong> has the problem, <strong>what</strong> they are trying to do, and <strong>how we will know</strong> it is solved.</p>
+  <div class="box"><p><strong>Example:</strong> New users who connect their bank account during sign-up often give up when the connection fails. We will know this is solved when more new users reach their first transaction within a day.</p></div>
+  <p>If you cannot name the metric, the problem is not ready to be worked on yet. That is useful information too.</p>
+
+  <h2>5. Score the options with RICE</h2>
+  <p>Now, and only now, list possible solutions for each problem and score them: <strong>Reach</strong> (how many users per quarter), <strong>Impact</strong> (0.25 to 3), <strong>Confidence</strong> (how sure you are, in %) and <strong>Effort</strong> (person-weeks). The score is Reach × Impact × Confidence ÷ Effort.</p>
+  <p>The number itself matters less than the conversation it creates. When a stakeholder disagrees with the ranking, you can ask which of the four inputs they would change, and why. That is a far better discussion than "my feature is more important than yours".</p>
+  <p>You can try this with the example above in the <a href="/product/#demo" data-keep-lang style="text-decoration:underline">prioritisation demo</a>.</p>
+
+  <h2>What you end up with</h2>
+  <ul>
+    <li>One sheet with every complaint, traceable back to its source.</li>
+    <li>Six to ten problem labels with weighted counts.</li>
+    <li>Three framed problem statements, each with a success metric.</li>
+    <li>A ranked list of solutions with transparent scores.</li>
+  </ul>
+  <p>It is not a perfect process. But it is visible, repeatable and quick, and it replaces "who shouted last" with something the whole team can argue with constructively.</p>
+</article>
+</main>
+
+<footer class="site-footer"><div class="wrap"><div class="legal"><span>© <span id="y"></span> DataKraft</span><span><a href="/product/" data-keep-lang>← <span lang="en">Back to Product</span><span lang="de">Zurück zu Produkt</span></a></span></div></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>

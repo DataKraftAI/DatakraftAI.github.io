@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User stories developers don't have to rewrite — DataKraft</title>
+  <meta name="description" content="What makes a user story sprint-ready: the INVEST criteria, acceptance criteria that can be tested, a before-and-after example and a pre-refinement checklist.">
+  <meta name="robots" content="noindex">
+  <script>try{var l=(new URLSearchParams(location.search).get("lang")||localStorage.getItem("dk_lang")||"en");if(l.toLowerCase().indexOf("de")===0)document.documentElement.setAttribute("data-lang","de")}catch(e){}</script>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<div class="utility"><div class="wrap"><span>Berlin, <span lang="en">Germany</span><span lang="de">Deutschland</span></span><span class="langswitch" role="group" aria-label="Language"><button data-set="en">EN</button><button data-set="de">DE</button></span></div></div>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="/new/" data-keep-lang>DataKraft<span class="slash" aria-hidden="true"></span></a>
+  <nav class="nav"><a href="/product/" data-keep-lang class="hide-sm"><span lang="en">Product</span><span lang="de">Produkt</span></a><a class="btn primary" href="mailto:stan.kaylan@gmail.com"><span lang="en">Get in touch</span><span lang="de">Kontakt</span></a></nav>
+</div></header>
+
+<main class="wrap">
+<article class="article">
+  <p class="crumbs"><a href="/product/" data-keep-lang><span lang="en">Product</span><span lang="de">Produkt</span></a> › <span lang="en">Articles</span><span lang="de">Artikel</span></p>
+  <p class="note-en" lang="de">Dieser Artikel ist auf Englisch.</p>
+  <p class="eyebrow">Delivery</p>
+  <h1>User stories developers don't have to rewrite</h1>
+  <p class="standfirst">A good user story saves a refinement meeting. A bad one creates three. The difference is usually not the template but a handful of small habits.</p>
+  <div class="byline">DataKraft · 5 min read</div>
+
+  <p>Most teams know the template: <em>As a [user], I want [goal], so that [reason]</em>. Yet stories still get rewritten in refinement, split mid-sprint or come back from testing with "that's not what I meant". The template is not the problem. What is missing is everything around it.</p>
+
+  <h2>Start from INVEST, but use it as a checklist</h2>
+  <p>INVEST is the classic test for a good story. I treat each letter as a question to answer before the story goes to the team:</p>
+  <ul>
+    <li><strong>Independent:</strong> can it be built and released without waiting for another story?</li>
+    <li><strong>Negotiable:</strong> does it describe the need, leaving the "how" to the team?</li>
+    <li><strong>Valuable:</strong> would a user or the business notice if it shipped alone?</li>
+    <li><strong>Estimable:</strong> does the team know enough to size it?</li>
+    <li><strong>Small:</strong> can it be done in a few days, well inside one sprint?</li>
+    <li><strong>Testable:</strong> could someone outside the team check whether it is done?</li>
+  </ul>
+  <p>If the answer to any of them is "not really", the story is not ready. That is not a failure; it simply tells you what to do next.</p>
+
+  <h2>A before-and-after example</h2>
+  <p>Here is a story as it often arrives in a backlog:</p>
+  <pre>As a user, I want better error handling in onboarding so that the experience is improved.</pre>
+  <p>It fails almost every INVEST question. Which user? Which errors? What does "improved" mean, and how would anyone test it? Here is the same need, rewritten:</p>
+  <pre>As a new user whose bank connection fails during sign-up,
+I want to see why it failed and what I can do next,
+so that I can finish connecting my account instead of giving up.
+
+Acceptance criteria
+1. Given the bank rejects my login details,
+   when the connection fails,
+   then I see "Your bank did not accept these login details" and a "Try again" button.
+2. Given the bank is temporarily unavailable,
+   when the connection fails,
+   then I see that the problem is on the bank's side and can choose "Remind me in 1 hour".
+3. Given any other error,
+   when the connection fails,
+   then I see a short message and a link to chat with support, and the error code is logged.
+
+Out of scope: changing the list of supported banks.</pre>
+  <p>It is longer, but it will save time. Developers know exactly which cases to handle, the tester knows what to check, and the "out of scope" line prevents the classic mid-sprint discussion.</p>
+
+  <h2>Acceptance criteria are the real story</h2>
+  <p>The sentence at the top is a headline. The acceptance criteria are the agreement. I write them in <strong>Given / When / Then</strong> form because it forces three things: a starting situation, a trigger and an observable result. If you cannot fill in the "then" with something a person could see or measure, the criterion is still an opinion.</p>
+  <blockquote>If two people could read a criterion and disagree on whether it is met, it is not finished yet.</blockquote>
+
+  <h2>The checklist I run before every refinement</h2>
+  <div class="box">
+    <ul>
+      <li>The user is specific (new user, admin, paying customer), not "a user".</li>
+      <li>The "so that" names a real outcome, not "a better experience".</li>
+      <li>Three to six acceptance criteria, each in Given / When / Then.</li>
+      <li>Unhappy paths are covered, not only the ideal flow.</li>
+      <li>One line says what is out of scope.</li>
+      <li>Designs, data or examples are linked, not described from memory.</li>
+      <li>It fits in a few days. If not, split it by user path, not by technical layer.</li>
+    </ul>
+  </div>
+
+  <h2>Why it matters beyond the sprint</h2>
+  <p>Clear stories make estimates more reliable, which makes release plans more honest, which makes stakeholders trust the roadmap. Most of the trust a product team earns is built in these small, unglamorous documents.</p>
+  <p>Want to see where stories like this come from? Read <a href="/product/backlog-from-complaints/" data-keep-lang style="text-decoration:underline">From 40 customer complaints to a ranked backlog</a>.</p>
+</article>
+</main>
+
+<footer class="site-footer"><div class="wrap"><div class="legal"><span>© <span id="y"></span> DataKraft</span><span><a href="/product/" data-keep-lang>← <span lang="en">Back to Product</span><span lang="de">Zurück zu Produkt</span></a></span></div></div></footer>
+<script src="/assets/site.js"></script>
+</body>
+</html>
